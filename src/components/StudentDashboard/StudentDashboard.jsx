@@ -68,7 +68,7 @@ const StudentDashboard = ({ setCurrentView }) => {
 
           {/* Horario de Clase */}
           <button
-            onClick={() => handleCardClick('class-schedule')}
+            onClick={() => setCurrentView('class-schedule')} // CAMBIAR ESTA LÍNEA
             className="student-dashboard-card"
           >
             <Calendar className="student-dashboard-card-icon" />

@@ -6,6 +6,7 @@ import PasswordRecovery from './components/PasswordRecovery/PasswordRecovery';
 import StudentDashboard from './components/StudentDashboard/StudentDashboard';
 import Messages from './components//Messages/Messages';
 import AcademicRecords from './components/AcademicRecords/AcademicRecords';
+import ClassSchedule from './components/ClassSchedule/ClassSchedule';
 
 const App = () => {
   const [currentView, setCurrentView] = useState('role-selection');
@@ -19,6 +20,7 @@ const App = () => {
       {currentView === 'student-dashboard' && <StudentDashboard setCurrentView={setCurrentView} />}
       {currentView === 'messages' && <Messages setCurrentView={setCurrentView} />}
       {currentView === 'academic-records' && <AcademicRecords setCurrentView={setCurrentView} />}
+      {currentView === 'class-schedule' && <ClassSchedule setCurrentView={setCurrentView} />}
     </div>
   );
 };
