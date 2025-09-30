@@ -149,60 +149,58 @@ const AcademicRecords = ({ setCurrentView }) => {
         <main className="academic-records-main">
           <div className="academic-records-main-content">
             {activeTab === 'historial' ? (
-              <>
-                <div className="academic-records-card">
-                  <div className="academic-records-card-header">
-                    <h2 className="academic-records-card-title">Historial Cursos</h2>
-                    <div className="academic-records-card-controls">
-                      <span className="academic-records-row-count">60 filas</span>
-                      <button className="academic-records-filter-button">
-                        <Filter size={20} />
-                      </button>
-                    </div>
-                  </div>
-
-                  {/* Tabla */}
-                  <div className="academic-records-table-wrapper">
-                    <table className="academic-records-table">
-                      <thead className="academic-records-table-head">
-                        <tr>
-                          <th>Clase</th>
-                          <th>Descripción</th>
-                          <th>Ciclo</th>
-                          <th>Calif</th>
-                          <th>Unidades</th>
-                          <th>Estado</th>
-                        </tr>
-                      </thead>
-                      <tbody className="academic-records-table-body">
-                        {courses.map((course) => (
-                          <tr key={course.id}>
-                            <td className="academic-records-course-code">
-                              {course.code}
-                            </td>
-                            <td className="academic-records-course-text">
-                              {course.description}
-                            </td>
-                            <td className="academic-records-course-text">
-                              {course.cycle}
-                            </td>
-                            <td className="academic-records-course-text">
-                              {course.grade}
-                            </td>
-                            <td className="academic-records-course-text">
-                              {course.units}
-                            </td>
-                            <td className={`academic-records-status ${getStatusClass(course.status)}`}>
-                              <span>{getStatusIcon(course.status)}</span>
-                              <span>{course.status}</span>
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
+              <div className="academic-records-card">
+                <div className="academic-records-card-header">
+                  <h2 className="academic-records-card-title">Historial Cursos</h2>
+                  <div className="academic-records-card-controls">
+                    <span className="academic-records-row-count">60 filas</span>
+                    <button className="academic-records-filter-button">
+                      <Filter size={20} />
+                    </button>
                   </div>
                 </div>
-              </>
+
+                {/* Tabla */}
+                <div className="academic-records-table-wrapper">
+                  <table className="academic-records-table">
+                    <thead className="academic-records-table-head">
+                      <tr>
+                        <th>Clase</th>
+                        <th>Descripción</th>
+                        <th>Ciclo</th>
+                        <th>Calif</th>
+                        <th>Unidades</th>
+                        <th>Estado</th>
+                      </tr>
+                    </thead>
+                    <tbody className="academic-records-table-body">
+                      {courses.map((course) => (
+                        <tr key={course.id}>
+                          <td className="academic-records-course-code">
+                            {course.code}
+                          </td>
+                          <td className="academic-records-course-text">
+                            {course.description}
+                          </td>
+                          <td className="academic-records-course-text">
+                            {course.cycle}
+                          </td>
+                          <td className="academic-records-course-text">
+                            {course.grade}
+                          </td>
+                          <td className="academic-records-course-text">
+                            {course.units}
+                          </td>
+                          <td className={`academic-records-status ${getStatusClass(course.status)}`}>
+                            <span>{getStatusIcon(course.status)}</span>
+                            <span>{course.status}</span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
             ) : (
               <div className="academic-records-semaforo-card">
                 {/* Información del estudiante */}
