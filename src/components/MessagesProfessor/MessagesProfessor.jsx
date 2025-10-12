@@ -46,88 +46,88 @@ const MessagesProfessor = ({ setCurrentView }) => {
   );
 
   return (
-    <div className="messages-container">
+  <div className="prof-messages-container">
       {/* Header */}
-      <header className="messages-header">
-        <div className="messages-header-content">
+      <header className="prof-messages-header">
+        <div className="prof-messages-header-content">
           {/* Botón atrás y título */}
-          <div className="messages-header-left">
+          <div className="prof-messages-header-left">
             <button 
               onClick={() => setCurrentView('professor-dashboard')}
-              className="messages-back-button"
+              className="prof-messages-back-button"
             >
               <ArrowLeft size={24} />
             </button>
-            <h1 className="messages-title">Mensajes</h1>
+            <h1 className="prof-messages-title">Mensajes</h1>
           </div>
 
           {/* Botón de opciones */}
-          <button className="messages-options-button">
+          <button className="prof-messages-options-button">
             <MoreVertical size={24} />
           </button>
         </div>
       </header>
 
       {/* Search Bar */}
-      <div className="messages-search-section">
-        <div className="messages-search-wrapper">
-          <Search className="messages-search-icon" size={20} />
+      <div className="prof-messages-search-section">
+        <div className="prof-messages-search-wrapper">
+          <Search className="prof-messages-search-icon" size={20} />
           <input
             type="text"
             placeholder="Buscar mensajes..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="messages-search-input"
+            className="prof-messages-search-input"
           />
         </div>
       </div>
 
       {/* Messages List */}
-      <main className="messages-main">
-        <div className="messages-list-card">
+      <main className="prof-messages-main">
+        <div className="prof-messages-list-card">
           {filteredMessages.length === 0 ? (
-            <div className="messages-empty-state">
+            <div className="prof-messages-empty-state">
               <p>No se encontraron mensajes</p>
             </div>
           ) : (
-            <div className="messages-divider">
+            <div className="prof-messages-divider">
               {filteredMessages.map((message) => (
                 <div 
                   key={message.id} 
-                  className={`messages-item ${
-                    !message.isRead ? 'messages-item-unread' : ''
+                  className={`prof-messages-item ${
+                    !message.isRead ? 'prof-messages-item-unread' : ''
                   }`}
                 >
-                  <div className="messages-item-content">
-                    <div className="messages-item-main">
+                  <div className="prof-messages-item-content">
+                    <div className="prof-messages-item-main">
                       {/* Sender and Time */}
-                      <div className="messages-item-header">
-                        <p className={`messages-item-sender ${
-                          !message.isRead ? 'messages-item-sender-unread' : ''
+                      <div className="prof-messages-item-header">
+                        <p className={`prof-messages-item-sender ${
+                          !message.isRead ? 'prof-messages-item-sender-unread' : ''
                         }`}>
                           {message.sender}
                         </p>
-                        <p className="messages-item-time">
+                        <p className="prof-messages-item-time">
                           {message.time}
                         </p>
                       </div>
                       
                       {/* Subject */}
-                      <p className={`messages-item-subject ${
-                        !message.isRead ? 'messages-item-subject-unread' : ''
+                      <p className={`prof-messages-item-subject ${
+                        !message.isRead ? 'prof-messages-item-subject-unread' : ''
                       }`}>
                         {message.subject}
                       </p>
                       
                       {/* Preview */}
-                      <p className="messages-item-preview">
+                      <p className="prof-messages-item-preview">
                         {message.preview}
                       </p>
                     </div>
 
                     {/* Unread indicator */}
                     {!message.isRead && (
-                      <div className="messages-item-unread-indicator"></div>
+                      <div className="prof-messages-item-unread-indicator"></div>
                     )}
                   </div>
                 </div>
@@ -138,12 +138,12 @@ const MessagesProfessor = ({ setCurrentView }) => {
 
         {/* Empty state for no messages */}
         {messages.length === 0 && (
-          <div className="messages-no-results">
-            <div className="messages-no-results-icon-wrapper">
-              <Search className="messages-no-results-icon" size={32} />
+          <div className="prof-messages-no-results">
+            <div className="prof-messages-no-results-icon-wrapper">
+              <Search className="prof-messages-no-results-icon" size={32} />
             </div>
-            <h3 className="messages-no-results-title">No hay mensajes</h3>
-            <p className="messages-no-results-text">Cuando recibas mensajes, aparecerán aquí.</p>
+            <h3 className="prof-messages-no-results-title">No hay mensajes</h3>
+            <p className="prof-messages-no-results-text">Cuando recibas mensajes, aparecerán aquí.</p>
           </div>
         )}
       </main>

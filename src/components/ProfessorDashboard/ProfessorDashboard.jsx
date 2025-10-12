@@ -4,7 +4,7 @@ import './ProfessorDashboard.css';
 
 const ProfessorDashboard = ({ setCurrentView }) => {
   const handleNotificationClick = () => {
-    setCurrentView('messages');
+    setCurrentView('messages-professor');
   };
 
   const handleCardClick = (cardType) => {
