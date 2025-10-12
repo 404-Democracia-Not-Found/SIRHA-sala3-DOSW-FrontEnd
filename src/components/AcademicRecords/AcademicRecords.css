@@ -1,17 +1,17 @@
-.academic-records-wrapper {
+.student-academic-records-wrapper {
   display: flex;
   flex-direction: column;
   height: 100vh;
   background-color: #f3f4f6;
 }
 
-.academic-records-header {
+.student-academic-records-header {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   color: white;
   background-color: #A10000;
 }
 
-.academic-records-header-content {
+.student-academic-records-header-content {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0.75rem 1rem;
@@ -20,7 +20,7 @@
   align-items: center;
 }
 
-.academic-records-back-button {
+.student-academic-records-back-button {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -33,26 +33,26 @@
   transition: background-color 0.3s;
 }
 
-.academic-records-back-button:hover {
+.student-academic-records-back-button:hover {
   background-color: #8B0000;
 }
 
-.academic-records-back-text {
+.student-academic-records-back-text {
   font-weight: 500;
 }
 
-.academic-records-title {
+.student-academic-records-title {
   font-size: 1.25rem;
   font-weight: bold;
 }
 
-.academic-records-nav {
+.student-academic-records-nav {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.academic-records-nav-button {
+.student-academic-records-nav-button {
   padding: 0.5rem;
   border-radius: 50%;
   background: none;
@@ -63,11 +63,11 @@
   position: relative;
 }
 
-.academic-records-nav-button:hover {
+.student-academic-records-nav-button:hover {
   background-color: #8B0000;
 }
 
-.academic-records-notification-badge {
+.student-academic-records-notification-badge {
   position: absolute;
   top: 0.25rem;
   right: 0.25rem;
@@ -79,11 +79,11 @@
   border: 2px solid #A10000;
 }
 
-.academic-records-menu-wrapper {
+.student-academic-records-menu-wrapper {
   position: relative;
 }
 
-.academic-records-dropdown {
+.student-academic-records-dropdown {
   position: absolute;
   right: 0;
   margin-top: 0.5rem;
@@ -95,7 +95,7 @@
   z-index: 10;
 }
 
-.academic-records-dropdown-item {
+.student-academic-records-dropdown-item {
   display: block;
   width: 100%;
   text-align: left;
@@ -108,27 +108,27 @@
   transition: background-color 0.3s;
 }
 
-.academic-records-dropdown-item:hover {
+.student-academic-records-dropdown-item:hover {
   background-color: #f3f4f6;
 }
 
-.academic-records-content {
+.student-academic-records-content {
   display: flex;
   flex: 1;
   overflow: hidden;
 }
 
-.academic-records-sidebar {
+.student-academic-records-sidebar {
   width: 16rem;
   background-color: #e5e7eb;
   border-right: 1px solid #d1d5db;
 }
 
-.academic-records-sidebar-content {
+.student-academic-records-sidebar-content {
   padding: 1rem;
 }
 
-.academic-records-sidebar-button {
+.student-academic-records-sidebar-button {
   width: 100%;
   text-align: left;
   padding: 0.75rem 1rem;
@@ -140,33 +140,33 @@
   transition: background-color 0.3s;
 }
 
-.academic-records-sidebar-button:hover {
+.student-academic-records-sidebar-button:hover {
   background-color: #f9fafb;
 }
 
-.academic-records-sidebar-button-active {
+.student-academic-records-sidebar-button-active {
   background-color: #bbf7d0;
   border-left: 4px solid #16a34a;
   font-weight: 600;
 }
 
-.academic-records-main {
+.student-academic-records-main {
   flex: 1;
   overflow: auto;
 }
 
-.academic-records-main-content {
+.student-academic-records-main-content {
   padding: 1.5rem;
 }
 
-.academic-records-card {
+.student-academic-records-card {
   background-color: white;
   border-radius: 0.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   margin-bottom: 1rem;
 }
 
-.academic-records-card-header {
+.student-academic-records-card-header {
   padding: 1rem;
   border-bottom: 1px solid #e5e7eb;
   display: flex;
@@ -174,23 +174,23 @@
   align-items: center;
 }
 
-.academic-records-card-title {
+.student-academic-records-card-title {
   font-size: 1.25rem;
   font-weight: bold;
 }
 
-.academic-records-card-controls {
+.student-academic-records-card-controls {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.academic-records-row-count {
+.student-academic-records-row-count {
   font-size: 0.875rem;
   color: #4b5563;
 }
 
-.academic-records-filter-button {
+.student-academic-records-filter-button {
   padding: 0.5rem;
   background: none;
   border: none;
@@ -199,24 +199,24 @@
   border-radius: 0.25rem;
 }
 
-.academic-records-filter-button:hover {
+.student-academic-records-filter-button:hover {
   background-color: #f3f4f6;
 }
 
-.academic-records-table-wrapper {
+.student-academic-records-table-wrapper {
   overflow-x: auto;
 }
 
-.academic-records-table {
+.student-academic-records-table {
   width: 100%;
 }
 
-.academic-records-table-head {
+.student-academic-records-table-head {
   background-color: #f9fafb;
   border-bottom: 1px solid #e5e7eb;
 }
 
-.academic-records-table-head tr th {
+.student-academic-records-table-head tr th {
   padding: 0.75rem 1rem;
   text-align: left;
   font-size: 0.75rem;
@@ -226,53 +226,53 @@
   letter-spacing: 0.05em;
 }
 
-.academic-records-table-body {
+.student-academic-records-table-body {
   background-color: white;
 }
 
-.academic-records-table-body tr {
+.student-academic-records-table-body tr {
   border-bottom: 1px solid #e5e7eb;
 }
 
-.academic-records-table-body tr:hover {
+.student-academic-records-table-body tr:hover {
   background-color: #f9fafb;
 }
 
-.academic-records-table-body tr td {
+.student-academic-records-table-body tr td {
   padding: 0.75rem 1rem;
   font-size: 0.875rem;
 }
 
-.academic-records-course-code {
+.student-academic-records-course-code {
   font-weight: 500;
   color: #111827;
 }
 
-.academic-records-course-text {
+.student-academic-records-course-text {
   color: #374151;
 }
 
-.academic-records-status {
+.student-academic-records-status {
   font-weight: 500;
   display: flex;
   align-items: center;
   gap: 0.25rem;
 }
 
-.academic-records-status-in-progress {
+.student-academic-records-status-in-progress {
   color: #ea580c;
 }
 
-.academic-records-status-completed {
+.student-academic-records-status-completed {
   color: #16a34a;
 }
 
-.academic-records-status-transferred {
+.student-academic-records-status-transferred {
   color: #2563eb;
 }
 
 /* SEMÁFORO ACADÉMICO STYLES */
-.academic-records-semaforo-card {
+.student-academic-records-semaforo-card {
   background-color: white;
   border-radius: 0.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);

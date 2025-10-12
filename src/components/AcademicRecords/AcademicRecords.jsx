@@ -31,11 +31,11 @@ const AcademicRecords = ({ setCurrentView }) => {
   const getStatusClass = (status) => {
     switch (status) {
       case 'En Curso':
-        return 'academic-records-status-in-progress';
+        return 'student-academic-records-status-in-progress';
       case 'Realizado':
-        return 'academic-records-status-completed';
+        return 'student-academic-records-status-completed';
       case 'Transferido':
-        return 'academic-records-status-transferred';
+        return 'student-academic-records-status-transferred';
       default:
         return '';
     }
@@ -55,63 +55,63 @@ const AcademicRecords = ({ setCurrentView }) => {
   };
 
   return (
-    <div className="academic-records-wrapper">
+    <div className="student-academic-records-wrapper">
       {/* Header */}
-      <header className="academic-records-header">
-        <div className="academic-records-header-content">
+      <header className="student-academic-records-header">
+        <div className="student-academic-records-header-content">
           {/* Botón Alumnos */}
           <button
             onClick={() => setCurrentView('student-dashboard')}
-            className="academic-records-back-button"
+            className="student-academic-records-back-button"
           >
             <ChevronLeft size={20} />
-            <span className="academic-records-back-text">Alumnos</span>
+            <span className="student-academic-records-back-text">Alumnos</span>
           </button>
 
           {/* Título central */}
-          <h1 className="academic-records-title">Historial de Cursos</h1>
+          <h1 className="student-academic-records-title">Historial de Cursos</h1>
 
           {/* Iconos de navegación */}
-          <div className="academic-records-nav">
+          <div className="student-academic-records-nav">
             <button
               onClick={() => setCurrentView('student-dashboard')}
-              className="academic-records-nav-button"
+              className="student-academic-records-nav-button"
             >
               <Home size={20} />
             </button>
             <button
               onClick={() => setCurrentView('messages')}
-              className="academic-records-nav-button"
+              className="student-academic-records-nav-button"
             >
               <Bell size={20} />
-              <span className="academic-records-notification-badge"></span>
+              <span className="student-academic-records-notification-badge"></span>
             </button>
-            <div className="academic-records-menu-wrapper">
+            <div className="student-academic-records-menu-wrapper">
               <button
                 onClick={() => setShowMenu(!showMenu)}
-                className="academic-records-nav-button"
+                className="student-academic-records-nav-button"
               >
                 <MoreVertical size={20} />
               </button>
               
               {/* Menú desplegable */}
               {showMenu && (
-                <div className="academic-records-dropdown">
+                <div className="student-academic-records-dropdown">
                   <button
                     onClick={() => handleMenuClick('class-management')}
-                    className="academic-records-dropdown-item"
+                    className="student-academic-records-dropdown-item"
                   >
                     Gestión de Clases
                   </button>
                   <button
                     onClick={() => handleMenuClick('class-schedule')}
-                    className="academic-records-dropdown-item"
+                    className="student-academic-records-dropdown-item"
                   >
                     Horario de Clase
                   </button>
                   <button
                     onClick={() => handleMenuClick('profile')}
-                    className="academic-records-dropdown-item"
+                    className="student-academic-records-dropdown-item"
                   >
                     Mi Perfil
                   </button>
@@ -122,22 +122,22 @@ const AcademicRecords = ({ setCurrentView }) => {
         </div>
       </header>
 
-      <div className="academic-records-content">
+      <div className="student-academic-records-content">
         {/* Sidebar izquierda */}
-        <aside className="academic-records-sidebar">
-          <div className="academic-records-sidebar-content">
+        <aside className="student-academic-records-sidebar">
+          <div className="student-academic-records-sidebar-content">
             <button
               onClick={() => setActiveTab('historial')}
-              className={`academic-records-sidebar-button ${
-                activeTab === 'historial' ? 'academic-records-sidebar-button-active' : ''
+              className={`student-academic-records-sidebar-button ${
+                activeTab === 'historial' ? 'student-academic-records-sidebar-button-active' : ''
               }`}
             >
               📚 Historial de Cursos
             </button>
             <button
               onClick={() => setActiveTab('semaforo')}
-              className={`academic-records-sidebar-button ${
-                activeTab === 'semaforo' ? 'academic-records-sidebar-button-active' : ''
+              className={`student-academic-records-sidebar-button ${
+                activeTab === 'semaforo' ? 'student-academic-records-sidebar-button-active' : ''
               }`}
             >
               🚦 Semáforo Académico
@@ -146,24 +146,24 @@ const AcademicRecords = ({ setCurrentView }) => {
         </aside>
 
         {/* Contenido principal */}
-        <main className="academic-records-main">
-          <div className="academic-records-main-content">
+        <main className="student-academic-records-main">
+          <div className="student-academic-records-main-content">
             {activeTab === 'historial' ? (
-              <div className="academic-records-card">
-                <div className="academic-records-card-header">
-                  <h2 className="academic-records-card-title">Historial Cursos</h2>
-                  <div className="academic-records-card-controls">
-                    <span className="academic-records-row-count">60 filas</span>
-                    <button className="academic-records-filter-button">
+              <div className="student-academic-records-card">
+                <div className="student-academic-records-card-header">
+                  <h2 className="student-academic-records-card-title">Historial Cursos</h2>
+                  <div className="student-academic-records-card-controls">
+                    <span className="student-academic-records-row-count">60 filas</span>
+                    <button className="student-academic-records-filter-button">
                       <Filter size={20} />
                     </button>
                   </div>
                 </div>
 
                 {/* Tabla */}
-                <div className="academic-records-table-wrapper">
-                  <table className="academic-records-table">
-                    <thead className="academic-records-table-head">
+                <div className="student-academic-records-table-wrapper">
+                  <table className="student-academic-records-table">
+                    <thead className="student-academic-records-table-head">
                       <tr>
                         <th>Clase</th>
                         <th>Descripción</th>
@@ -173,25 +173,25 @@ const AcademicRecords = ({ setCurrentView }) => {
                         <th>Estado</th>
                       </tr>
                     </thead>
-                    <tbody className="academic-records-table-body">
+                    <tbody className="student-academic-records-table-body">
                       {courses.map((course) => (
                         <tr key={course.id}>
-                          <td className="academic-records-course-code">
+                          <td className="student-academic-records-course-code">
                             {course.code}
                           </td>
-                          <td className="academic-records-course-text">
+                          <td className="student-academic-records-course-text">
                             {course.description}
                           </td>
-                          <td className="academic-records-course-text">
+                          <td className="student-academic-records-course-text">
                             {course.cycle}
                           </td>
-                          <td className="academic-records-course-text">
+                          <td className="student-academic-records-course-text">
                             {course.grade}
                           </td>
-                          <td className="academic-records-course-text">
+                          <td className="student-academic-records-course-text">
                             {course.units}
                           </td>
-                          <td className={`academic-records-status ${getStatusClass(course.status)}`}>
+                          <td className={`student-academic-records-status ${getStatusClass(course.status)}`}>
                             <span>{getStatusIcon(course.status)}</span>
                             <span>{course.status}</span>
                           </td>
@@ -202,7 +202,7 @@ const AcademicRecords = ({ setCurrentView }) => {
                 </div>
               </div>
             ) : (
-              <div className="academic-records-semaforo-card">
+              <div className="student-academic-records-semaforo-card">
                 {/* Información del estudiante */}
                 <div className="semaforo-student-info">
                   <div className="semaforo-info-grid">

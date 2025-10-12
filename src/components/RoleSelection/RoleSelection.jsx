@@ -42,7 +42,7 @@ const RoleSelection = ({ setCurrentView }) => {
             className="role-selection-button-secondary"
           >
             <User size={20} />
-            Ingresar como Administrativo
+            Ingresar como Profesor
           </button>
         </div>
 
