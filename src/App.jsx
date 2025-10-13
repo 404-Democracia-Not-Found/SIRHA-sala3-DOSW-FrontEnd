@@ -10,7 +10,7 @@ import ClassSchedule from './components/ClassSchedule/ClassSchedule';
 import ProfessorDashboard from './components/Professor/ProfessorDashboard/ProfessorDashboard';
 import MessagesProfessor from './components/Professor/MessagesProfessor/MessagesProfessor';
 import ClassesRecords from './components/Professor/ClassesRecords/ClassesRecords';
-import Schedule from './components/Schedule/Schedule';
+import Schedule from './components/Professor/Schedule/Schedule';
 import ProfessorUser from './components/Professor/ProfessorUser/ProfessorUser';
 import ClassManagementProfessor from './components/Professor/ClassManagementProfessor/ClassManagementProfessor';
 
