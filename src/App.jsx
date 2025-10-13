@@ -15,6 +15,7 @@ import ProfessorUser from './components/Professor/ProfessorUser/ProfessorUser';
 import ClassManagementProfessor from './components/Professor/ClassManagementProfessor/ClassManagementProfessor';
 import StudentUser from './components/Student/StudentUser/StudentUser';
 import ClassManagement from './components/Student/ClassManagement/ClassManagement';
+import AdministrativeDashboard from './components/Administrative/AdministrativeDashboard/AdministrativeDashboard';
 
 const App = () => {
   const [currentView, setCurrentView] = useState('role-selection');
@@ -37,6 +38,7 @@ const App = () => {
       {currentView === 'class-management-professor' && <ClassManagementProfessor setCurrentView={setCurrentView} />}
       {currentView === 'student-user' && <StudentUser setCurrentView={setCurrentView} />}
       {currentView === 'class-management' && <ClassManagement setCurrentView={setCurrentView} />}
+      {currentView === 'administrative-dashboard' && <AdministrativeDashboard setCurrentView={setCurrentView} />}
     </div>
   );
 };
