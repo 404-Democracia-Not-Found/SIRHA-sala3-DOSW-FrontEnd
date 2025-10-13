@@ -7,6 +7,8 @@ import StudentDashboard from './components/StudentDashboard/StudentDashboard';
 import Messages from './components//Messages/Messages';
 import AcademicRecords from './components/AcademicRecords/AcademicRecords';
 import ClassSchedule from './components/ClassSchedule/ClassSchedule';
+import StudentUser from './components/Student/StudentUser/StudentUser';
+import ClassManagement from './components/Student/ClassManagement/ClassManagement';
 
 const App = () => {
   const [currentView, setCurrentView] = useState('role-selection');
@@ -21,6 +23,8 @@ const App = () => {
       {currentView === 'messages' && <Messages setCurrentView={setCurrentView} />}
       {currentView === 'academic-records' && <AcademicRecords setCurrentView={setCurrentView} />}
       {currentView === 'class-schedule' && <ClassSchedule setCurrentView={setCurrentView} />}
+      {currentView === 'student-user' && <StudentUser setCurrentView={setCurrentView} />}
+      {currentView === 'class-management' && <ClassManagement setCurrentView={setCurrentView} />}
     </div>
   );
 };
