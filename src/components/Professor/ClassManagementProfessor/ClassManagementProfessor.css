@@ -1,0 +1,453 @@
+.class-management-professor-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #f3f4f6;
+}
+
+.class-management-professor-header {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  color: white;
+  background-color: #1e293b;
+}
+
+.class-management-professor-header-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.class-management-professor-back-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.25rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.class-management-professor-back-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.class-management-professor-back-text {
+  font-weight: 500;
+}
+
+.class-management-professor-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.class-management-professor-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.class-management-professor-nav-button {
+  padding: 0.5rem;
+  border-radius: 50%;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  position: relative;
+}
+
+.class-management-professor-nav-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.class-management-professor-notification-badge {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+  display: block;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid #1e293b;
+}
+
+.class-management-professor-menu-wrapper {
+  position: relative;
+}
+
+.class-management-professor-dropdown {
+  position: absolute;
+  right: 0;
+  margin-top: 0.5rem;
+  width: 12rem;
+  background-color: white;
+  border-radius: 0.375rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  padding: 0.25rem 0;
+  z-index: 10;
+}
+
+.class-management-professor-dropdown-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  color: #374151;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.class-management-professor-dropdown-item:hover {
+  background-color: #f3f4f6;
+}
+
+.class-management-professor-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.class-management-professor-sidebar {
+  width: 16rem;
+  background-color: #e5e7eb;
+  border-right: 1px solid #d1d5db;
+}
+
+.class-management-professor-sidebar-content {
+  padding: 1rem;
+}
+
+.class-management-professor-sidebar-button {
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.25rem;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.class-management-professor-sidebar-button:hover {
+  background-color: #f9fafb;
+}
+
+.class-management-professor-sidebar-button-active {
+  background-color: #bfdbfe;
+  border-left: 4px solid #1e293b;
+  font-weight: 600;
+}
+
+.class-management-professor-main {
+  flex: 1;
+  overflow: auto;
+}
+
+.class-management-professor-main-content {
+  padding: 1.5rem;
+}
+
+/* Period Header */
+.class-management-professor-period-header {
+  background-color: #f3f4f6;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+
+.class-management-professor-period-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 0.25rem;
+}
+
+.class-management-professor-period-status {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Tab Buttons */
+.class-management-professor-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  background-color: #d1fae5;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.class-management-professor-tab-button {
+  padding: 0.5rem 1rem;
+  background-color: white;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.class-management-professor-tab-button:hover {
+  background-color: #f9fafb;
+  border-color: #1e293b;
+}
+
+/* Class Card */
+.class-management-professor-class-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.class-management-professor-class-header {
+  background-color: #f9fafb;
+  padding: 1rem;
+  border-bottom: 2px solid #e5e7eb;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.class-management-professor-class-header:hover {
+  background-color: #f3f4f6;
+}
+
+.class-management-professor-class-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #b45309;
+  flex: 1;
+}
+
+.class-management-professor-class-body {
+  padding: 1.5rem;
+}
+
+.class-management-professor-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.class-management-professor-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.class-management-professor-info-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.class-management-professor-info-value {
+  font-size: 0.875rem;
+  color: #111827;
+  font-weight: 500;
+}
+
+.class-management-professor-schedule-section {
+  margin-top: 1.5rem;
+}
+
+.class-management-professor-schedule-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.class-management-professor-schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.class-management-professor-schedule-table th {
+  background-color: #f9fafb;
+  padding: 0.75rem;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #374151;
+  text-transform: uppercase;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.class-management-professor-schedule-table td {
+  padding: 0.75rem;
+  font-size: 0.875rem;
+  color: #111827;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.class-management-professor-schedule-table tr:last-child td {
+  border-bottom: none;
+}
+
+.class-management-professor-limits-link {
+  color: #2563eb;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+
+.class-management-professor-limits-link:hover {
+  color: #1d4ed8;
+}
+
+/* Search Section */
+.class-management-professor-search-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.class-management-professor-search-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 1.5rem;
+}
+
+.class-management-professor-search-subtitle {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+.class-management-professor-search-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.class-management-professor-search-input:focus {
+  outline: none;
+  border-color: #1e293b;
+  box-shadow: 0 0 0 3px rgba(30, 41, 59, 0.1);
+}
+
+.class-management-professor-search-button {
+  padding: 0.5rem 1.5rem;
+  background-color: #1e293b;
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.class-management-professor-search-button:hover {
+  background-color: #0f172a;
+}
+
+.class-management-professor-recent-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.class-management-professor-recent-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #b45309;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.class-management-professor-accordion-section {
+  background-color: white;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.class-management-professor-accordion-header {
+  padding: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.class-management-professor-accordion-header:hover {
+  background-color: #f3f4f6;
+}
+
+.class-management-professor-accordion-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #b45309;
+}
+
+.class-management-professor-accordion-content {
+  padding: 1.5rem;
+}
+
+.class-management-professor-period-option {
+  padding: 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.375rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.class-management-professor-period-option:hover {
+  background-color: #f9fafb;
+  border-color: #1e293b;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .class-management-professor-sidebar {
+    display: none;
+  }
+
+  .class-management-professor-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .class-management-professor-tabs {
+    flex-direction: column;
+  }
+}

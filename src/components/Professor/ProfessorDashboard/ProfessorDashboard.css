@@ -1,0 +1,142 @@
+.professor-dashboard-container {
+  min-height: 100vh;
+  background-color: #f3f4f6;
+}
+
+.professor-dashboard-header {
+  background-color: #1e293b;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+.professor-dashboard-header-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.professor-dashboard-logo-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.professor-dashboard-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.professor-dashboard-logo-box {
+  width: 2rem;
+  height: 2rem;
+  background-color: white;
+  border: 2px solid #d1d5db;
+  border-radius: 0.25rem;
+}
+
+.professor-dashboard-role {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.professor-dashboard-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.professor-dashboard-nav-button {
+  padding: 0.5rem;
+  border-radius: 50%;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  position: relative;
+}
+
+.professor-dashboard-nav-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.professor-dashboard-notification-badge {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+  display: block;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 50%;
+  background-color: #0a2540;
+  border: 2px solid #1e293b;
+}
+
+.professor-dashboard-main {
+  flex-grow: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+@media (min-width: 640px) {
+  .professor-dashboard-main {
+    padding: 3rem 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .professor-dashboard-main {
+    padding: 3rem 2rem;
+  }
+}
+
+.professor-dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .professor-dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.professor-dashboard-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.professor-dashboard-card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border-color: #334155;
+}
+
+.professor-dashboard-card-icon {
+  color: #1e293b;
+  width: 5rem;
+  height: 5rem;
+  margin-bottom: 1.5rem;
+}
+
+.professor-dashboard-card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+}

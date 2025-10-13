@@ -7,7 +7,7 @@ const AdminLogin = ({ setCurrentView }) => {
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
-    alert('¡Bienvenido, administrativo!');
+    setCurrentView('professor-dashboard');
   };
 
   return (
@@ -21,7 +21,7 @@ const AdminLogin = ({ setCurrentView }) => {
           </div>
           
           <h1 className="admin-login-welcome-title">
-            Bienvenido de nuevo, Administrador.
+            Bienvenido de nuevo, Profesor.
           </h1>
           <p className="admin-login-welcome-text">
             Inicie sesión para acceder a su panel de control y gestionar las operaciones 
@@ -35,7 +35,7 @@ const AdminLogin = ({ setCurrentView }) => {
         <div className="admin-login-form-container">
           <div className="admin-login-header">
             <h2 className="admin-login-title">
-              Inicio de Sesión de Administrador
+              Inicio de Sesión de Profesor
             </h2>
             <p className="admin-login-subtitle">Por favor, ingrese sus credenciales para continuar.</p>
           </div>
@@ -87,7 +87,7 @@ const AdminLogin = ({ setCurrentView }) => {
           </div>
 
           <div className="admin-login-switch-section">
-            <span className="admin-login-switch-text">¿No es un administrador? </span>
+            <span className="admin-login-switch-text">¿No es un profesor? </span>
             <button
               onClick={() => setCurrentView('student-login')}
               className="admin-login-switch-button"
