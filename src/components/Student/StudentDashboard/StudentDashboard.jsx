@@ -59,7 +59,7 @@ const StudentDashboard = ({ setCurrentView }) => {
 
           {/* Gestión de Clases */}
           <button
-            onClick={() => handleCardClick('class-management')}
+            onClick={() => setCurrentView('class-management')}
             className="student-dashboard-card"
           >
             <BookOpen className="student-dashboard-card-icon" />
@@ -77,7 +77,7 @@ const StudentDashboard = ({ setCurrentView }) => {
 
           {/* Mi Perfil */}
           <button
-            onClick={() => handleCardClick('profile')}
+            onClick={() => setCurrentView('student-user')}
             className="student-dashboard-card"
           >
             <User className="student-dashboard-card-icon" />

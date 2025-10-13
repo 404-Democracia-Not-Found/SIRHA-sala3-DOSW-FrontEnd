@@ -1,8 +1,10 @@
-import React from 'react';
-import { Home, Bell, GraduationCap, BookOpen, Calendar, User } from 'lucide-react';
+import React, { useState } from 'react';
+import { Home, Bell, GraduationCap, BookOpen, Calendar, User, ChevronDown } from 'lucide-react';
 import './ProfessorDashboard.css';
 
 const ProfessorDashboard = ({ setCurrentView }) => {
+  const [showRoleMenu, setShowRoleMenu] = useState(false);
+
   const handleNotificationClick = () => {
     setCurrentView('messages-professor');
   };
@@ -22,9 +24,38 @@ const ProfessorDashboard = ({ setCurrentView }) => {
             <div className="professor-dashboard-logo-box"></div>
           </div>
 
-          {/* Título central */}
-          <div className="professor-dashboard-role">
-            Profesor
+          {/* Título central con menú de roles */}
+          <div className="professor-dashboard-role-wrapper">
+            <button 
+              onClick={() => setShowRoleMenu(!showRoleMenu)}
+              className="professor-dashboard-role-button"
+            >
+              Profesor
+              <ChevronDown size={16} style={{ marginLeft: '0.5rem' }} />
+            </button>
+            
+            {showRoleMenu && (
+              <div className="professor-dashboard-role-menu">
+                <button 
+                  onClick={() => {
+                    setShowRoleMenu(false);
+                    // Mantiene en la vista actual
+                  }}
+                  className="professor-dashboard-role-menu-item"
+                >
+                  Profesor
+                </button>
+                <button 
+                  onClick={() => {
+                    setShowRoleMenu(false);
+                    setCurrentView('administrative-dashboard');
+                  }}
+                  className="professor-dashboard-role-menu-item"
+                >
+                  Administrativo
+                </button>
+              </div>
+            )}
           </div>
 
           {/* Iconos de navegación */}
@@ -59,7 +90,7 @@ const ProfessorDashboard = ({ setCurrentView }) => {
 
           {/* Gestión de Clases */}
           <button
-            onClick={() => handleCardClick('class-management')}
+            onClick={() => setCurrentView('class-management-professor')}
             className="professor-dashboard-card"
           >
             <BookOpen className="professor-dashboard-card-icon" />
@@ -77,7 +108,7 @@ const ProfessorDashboard = ({ setCurrentView }) => {
 
           {/* Mi Perfil */}
           <button
-            onClick={() => handleCardClick('profile')}
+            onClick={() => setCurrentView('professor-user')}
             className="professor-dashboard-card"
           >
             <User className="professor-dashboard-card-icon" />

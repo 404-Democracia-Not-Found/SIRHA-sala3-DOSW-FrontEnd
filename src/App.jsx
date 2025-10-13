@@ -3,17 +3,16 @@ import RoleSelection from './components/RoleSelection/RoleSelection';
 import StudentLogin from './components/StudentLogin/StudentLogin';
 import AdminLogin from './components//AdminLogin/AdminLogin';
 import PasswordRecovery from './components/PasswordRecovery/PasswordRecovery';
-import StudentDashboard from './components/StudentDashboard/StudentDashboard';
-import Messages from './components//Messages/Messages';
-import AcademicRecords from './components/AcademicRecords/AcademicRecords';
-import ClassSchedule from './components/ClassSchedule/ClassSchedule';
+import StudentDashboard from './components//Student/StudentDashboard/StudentDashboard';
+import Messages from './components/Student/Messages/Messages';
+import AcademicRecords from './components/Student/AcademicRecords/AcademicRecords';
+import ClassSchedule from './components/Student/ClassSchedule/ClassSchedule';
 import ProfessorDashboard from './components/Professor/ProfessorDashboard/ProfessorDashboard';
 import MessagesProfessor from './components/Professor/MessagesProfessor/MessagesProfessor';
 import ClassesRecords from './components/Professor/ClassesRecords/ClassesRecords';
 import Schedule from './components/Professor/Schedule/Schedule';
 import ProfessorUser from './components/Professor/ProfessorUser/ProfessorUser';
 import ClassManagementProfessor from './components/Professor/ClassManagementProfessor/ClassManagementProfessor';
-
 import StudentUser from './components/Student/StudentUser/StudentUser';
 import ClassManagement from './components/Student/ClassManagement/ClassManagement';
 
