@@ -1,0 +1,269 @@
+.professor-user-container {
+  min-height: 100vh;
+  background-color: #f3f4f6;
+}
+
+.professor-user-header {
+  background-color: #1e293b;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+.professor-user-header-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.professor-user-logo-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.professor-user-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.professor-user-logo-box {
+  width: 2rem;
+  height: 2rem;
+  background-color: white;
+  border: 2px solid #d1d5db;
+  border-radius: 0.25rem;
+}
+
+.professor-user-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.professor-user-nav-button {
+  padding: 0.5rem;
+  border-radius: 50%;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  position: relative;
+}
+
+.professor-user-nav-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.professor-user-notification-badge {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+  display: block;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 50%;
+  background-color: #0a2540;
+  border: 2px solid #1e293b;
+}
+
+/* Main Content */
+.professor-user-main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.professor-user-content {
+  display: flex;
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .professor-user-content {
+    flex-direction: column;
+  }
+}
+
+/* Profile Photo Section */
+.professor-user-photo-section {
+  flex-shrink: 0;
+}
+
+.professor-user-photo-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: center;
+  width: 300px;
+}
+
+@media (max-width: 768px) {
+  .professor-user-photo-card {
+    width: 100%;
+  }
+}
+
+.professor-user-photo-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.professor-user-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #1e293b;
+  margin: 0 auto;
+}
+
+.professor-user-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.professor-user-id {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+}
+
+.professor-user-role {
+  font-size: 1rem;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+/* Information Tabs */
+.professor-user-info-section {
+  flex: 1;
+}
+
+.professor-user-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.professor-user-tab {
+  padding: 0.75rem 1.5rem;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: #6b7280;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.professor-user-tab:hover {
+  color: #1e293b;
+}
+
+.professor-user-tab-active {
+  color: #1e293b;
+  border-bottom-color: #1e293b;
+}
+
+.professor-user-tab-content {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+/* Info Grid */
+.professor-user-info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.professor-user-info-row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.professor-user-info-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.professor-user-info-label {
+  font-weight: 600;
+  color: #374151;
+}
+
+.professor-user-info-value {
+  color: #111827;
+}
+
+/* Contact Info */
+.professor-user-contact-item {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.professor-user-contact-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.professor-user-contact-type {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+}
+
+.professor-user-contact-value {
+  font-size: 1rem;
+  color: #111827;
+  font-weight: 500;
+}
+
+.professor-user-contact-preferred {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-left: 0.5rem;
+  padding: 0.125rem 0.5rem;
+  background-color: #dbeafe;
+  color: #1e40af;
+  font-size: 0.75rem;
+  border-radius: 0.25rem;
+}
+
+/* Address Section */
+.professor-user-address {
+  line-height: 1.6;
+  color: #111827;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .professor-user-info-row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  
+  .professor-user-tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .professor-user-tab {
+    white-space: nowrap;
+  }
+}

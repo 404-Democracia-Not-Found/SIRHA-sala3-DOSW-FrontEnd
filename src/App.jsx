@@ -7,10 +7,12 @@ import StudentDashboard from './components/StudentDashboard/StudentDashboard';
 import Messages from './components//Messages/Messages';
 import AcademicRecords from './components/AcademicRecords/AcademicRecords';
 import ClassSchedule from './components/ClassSchedule/ClassSchedule';
-import ProfessorDashboard from './components/ProfessorDashboard/ProfessorDashboard';
-import MessagesProfessor from './components/MessagesProfessor/MessagesProfessor';
-import ClassesRecords from './components/ClassesRecords/ClassesRecords';
+import ProfessorDashboard from './components/Professor/ProfessorDashboard/ProfessorDashboard';
+import MessagesProfessor from './components/Professor/MessagesProfessor/MessagesProfessor';
+import ClassesRecords from './components/Professor/ClassesRecords/ClassesRecords';
 import Schedule from './components/Schedule/Schedule';
+import ProfessorUser from './components/Professor/ProfessorUser/ProfessorUser';
+import ClassManagementProfessor from './components/Professor/ClassManagementProfessor/ClassManagementProfessor';
 
 
 const App = () => {
@@ -30,6 +32,8 @@ const App = () => {
       {currentView === 'messages-professor' && <MessagesProfessor setCurrentView={setCurrentView} />}
       {currentView === 'classes-records' && <ClassesRecords setCurrentView={setCurrentView} />}
       {currentView === 'schedule' && <Schedule setCurrentView={setCurrentView} />}
+      {currentView === 'professor-user' && <ProfessorUser setCurrentView={setCurrentView} />}
+      {currentView === 'class-management-professor' && <ClassManagementProfessor setCurrentView={setCurrentView} />}
     </div>
   );
 };
