@@ -15,7 +15,13 @@ import ProfessorUser from './components/Professor/ProfessorUser/ProfessorUser';
 import ClassManagementProfessor from './components/Professor/ClassManagementProfessor/ClassManagementProfessor';
 import StudentUser from './components/Student/StudentUser/StudentUser';
 import ClassManagement from './components/Student/ClassManagement/ClassManagement';
+
 import AdministrativeDashboard from './components/Administrative/AdministrativeDashboard/AdministrativeDashboard';
+import MessagesAdministrative from './components/Administrative/MessagesAdministrative/MessagesAdministrative';
+import RequestReviews from './components/Administrative/RequestReviews/RequestReviews';
+import AdministrativeUser from './components/Administrative/AdministrativeUser/AdministrativeUser';
+import ScheduleAdmin from './components/Administrative/ScheduleAdmin/ScheduleAdmin';
+import Registration from './components/Administrative/Registration/Registration';
 
 const App = () => {
   const [currentView, setCurrentView] = useState('role-selection');
@@ -39,6 +45,11 @@ const App = () => {
       {currentView === 'student-user' && <StudentUser setCurrentView={setCurrentView} />}
       {currentView === 'class-management' && <ClassManagement setCurrentView={setCurrentView} />}
       {currentView === 'administrative-dashboard' && <AdministrativeDashboard setCurrentView={setCurrentView} />}
+      {currentView === 'messages-administrative' && <MessagesAdministrative setCurrentView={setCurrentView} />}
+      {currentView === 'request-reviews' && <RequestReviews setCurrentView={setCurrentView} />}
+      {currentView === 'administrative-user' && <AdministrativeUser setCurrentView={setCurrentView} />}
+      {currentView === 'schedule-admin' && <ScheduleAdmin setCurrentView={setCurrentView} />}
+      {currentView === 'registration' && <Registration setCurrentView={setCurrentView} />}
     </div>
   );
 };

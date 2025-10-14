@@ -93,7 +93,7 @@ const AdministrativeDashboard = ({ setCurrentView }) => {
 
           {/* Horario */}
           <button
-            onClick={() => setCurrentView('administrative-schedule')}
+            onClick={() => setCurrentView('schedule-admin')}
             className="administrative-dashboard-card"
           >
             <Calendar className="administrative-dashboard-card-icon" />
@@ -102,7 +102,7 @@ const AdministrativeDashboard = ({ setCurrentView }) => {
 
           {/* Revisión de Solicitudes */}
           <button
-            onClick={() => handleCardClick('request-review')}
+            onClick={() => setCurrentView('request-reviews')}
             className="administrative-dashboard-card"
           >
             <FileCheck className="administrative-dashboard-card-icon" />
@@ -111,7 +111,7 @@ const AdministrativeDashboard = ({ setCurrentView }) => {
 
           {/* Registro */}
           <button
-            onClick={() => handleCardClick('registration')}
+            onClick={() => setCurrentView('registration')}
             className="administrative-dashboard-card"
           >
             <ClipboardList className="administrative-dashboard-card-icon" />
