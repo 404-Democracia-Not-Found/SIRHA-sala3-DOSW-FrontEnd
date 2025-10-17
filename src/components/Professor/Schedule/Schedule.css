@@ -1,17 +1,17 @@
-.class-schedule-wrapper {
+.schedule-wrapper {
   display: flex;
   flex-direction: column;
   height: 100vh;
   background-color: #f3f4f6;
 }
 
-.class-schedule-header {
+.schedule-header {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   color: white;
   background-color: #1e293b;
 }
 
-.class-schedule-header-content {
+.schedule-header-content {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0.75rem 1rem;
@@ -20,7 +20,7 @@
   align-items: center;
 }
 
-.class-schedule-back-button {
+.schedule-back-button {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -33,26 +33,26 @@
   transition: background-color 0.3s;
 }
 
-.class-schedule-back-button:hover {
+.schedule-back-button:hover {
   background-color: #1e293b;
 }
 
-.class-schedule-back-text {
+.schedule-back-text {
   font-weight: 500;
 }
 
-.class-schedule-title {
+.schedule-title {
   font-size: 1.25rem;
   font-weight: bold;
 }
 
-.class-schedule-nav {
+.schedule-nav {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.class-schedule-nav-button {
+.schedule-nav-button {
   padding: 0.5rem;
   border-radius: 50%;
   background: none;
@@ -63,11 +63,11 @@
   position: relative;
 }
 
-.class-schedule-nav-button:hover {
+.schedule-nav-button:hover {
   background-color: #1e293b;
 }
 
-.class-schedule-notification-badge {
+.schedule-notification-badge {
   position: absolute;
   top: 0.25rem;
   right: 0.25rem;
@@ -79,11 +79,11 @@
   border: 2px solid #1e293b;
 }
 
-.class-schedule-menu-wrapper {
+.schedule-menu-wrapper {
   position: relative;
 }
 
-.class-schedule-dropdown {
+.schedule-dropdown {
   position: absolute;
   right: 0;
   margin-top: 0.5rem;
@@ -95,7 +95,7 @@
   z-index: 10;
 }
 
-.class-schedule-dropdown-item {
+.schedule-dropdown-item {
   display: block;
   width: 100%;
   text-align: left;
@@ -108,23 +108,23 @@
   transition: background-color 0.3s;
 }
 
-.class-schedule-dropdown-item:hover {
+.schedule-dropdown-item:hover {
   background-color: #f3f4f6;
 }
 
-.class-schedule-content {
+.schedule-content {
   flex: 1;
   overflow: hidden;
 }
 
-.class-schedule-main {
+.schedule-main {
   height: 100%;
   overflow: auto;
   padding: 1.5rem;
 }
 
 /* Controles superiores */
-.class-schedule-controls {
+.schedule-controls {
   background-color: white;
   padding: 1rem;
   border-radius: 0.5rem;
@@ -132,12 +132,12 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.class-schedule-view-options {
+.schedule-view-options {
   display: flex;
   gap: 2rem;
 }
 
-.class-schedule-radio-label {
+.schedule-radio-label {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -146,18 +146,18 @@
   color: #374151;
 }
 
-.class-schedule-radio-label input[type="radio"] {
+.schedule-radio-label input[type="radio"] {
   cursor: pointer;
   width: 1rem;
   height: 1rem;
 }
 
-.class-schedule-radio-label span {
+.schedule-radio-label span {
   font-weight: 500;
 }
 
 /* Navegación de semanas */
-.class-schedule-week-navigation {
+.schedule-week-navigation {
   background-color: white;
   padding: 1rem;
   border-radius: 0.5rem;
@@ -168,7 +168,7 @@
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.class-schedule-week-button {
+.schedule-week-button {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -183,37 +183,37 @@
   font-weight: 500;
 }
 
-.class-schedule-week-button:hover {
+.schedule-week-button:hover {
   background-color: #e5e7eb;
   border-color: #9ca3af;
 }
 
-.class-schedule-week-range {
+.schedule-week-range {
   font-size: 1rem;
   font-weight: 600;
   color: #1f2937;
 }
 
 /* Calendario semanal */
-.class-schedule-calendar {
+.schedule-calendar {
   background-color: white;
   border-radius: 0.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   overflow-x: auto;
 }
 
-.class-schedule-grid {
+.schedule-grid {
   display: flex;
   min-width: 1000px;
 }
 
-.class-schedule-time-column {
+.schedule-time-column {
   width: 80px;
   border-right: 1px solid #e5e7eb;
   flex-shrink: 0;
 }
 
-.class-schedule-hour-header {
+.schedule-hour-header {
   height: 60px;
   display: flex;
   align-items: center;
@@ -225,7 +225,7 @@
   font-size: 0.875rem;
 }
 
-.class-schedule-hour-cell {
+.schedule-hour-cell {
   height: 60px;
   display: flex;
   align-items: center;
@@ -236,17 +236,17 @@
   font-weight: 500;
 }
 
-.class-schedule-day-column {
+.schedule-day-column {
   flex: 1;
   min-width: 150px;
   border-right: 1px solid #e5e7eb;
 }
 
-.class-schedule-day-column:last-child {
+.schedule-day-column:last-child {
   border-right: none;
 }
 
-.class-schedule-day-header {
+.schedule-day-header {
   height: 60px;
   display: flex;
   flex-direction: column;
@@ -256,26 +256,26 @@
   border-bottom: 2px solid #e5e7eb;
 }
 
-.class-schedule-day-name {
+.schedule-day-name {
   font-weight: 600;
   color: #1f2937;
   font-size: 0.875rem;
 }
 
-.class-schedule-day-date {
+.schedule-day-date {
   font-size: 0.75rem;
   color: #6b7280;
   margin-top: 0.125rem;
 }
 
-.class-schedule-hour-slot {
+.schedule-hour-slot {
   height: 60px;
   border-bottom: 1px solid #e5e7eb;
   padding: 0.25rem;
   position: relative;
 }
 
-.class-schedule-class-block {
+.schedule-class-block {
   border-radius: 0.25rem;
   padding: 0.5rem;
   margin-bottom: 0.25rem;
@@ -285,19 +285,19 @@
   overflow: hidden;
 }
 
-.class-schedule-class-block:hover {
+.schedule-class-block:hover {
   transform: translateY(-1px);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-.class-schedule-class-code {
+.schedule-class-code {
   font-size: 0.7rem;
   font-weight: 700;
   color: #1f2937;
   margin-bottom: 0.125rem;
 }
 
-.class-schedule-class-name {
+.schedule-class-name {
   font-size: 0.65rem;
   font-weight: 500;
   color: #374151;
@@ -308,13 +308,13 @@
   white-space: nowrap;
 }
 
-.class-schedule-class-time {
+.schedule-class-time {
   font-size: 0.6rem;
   color: #4b5563;
   margin-bottom: 0.125rem;
 }
 
-.class-schedule-class-location {
+.schedule-class-location {
   font-size: 0.6rem;
   color: #6b7280;
   overflow: hidden;
@@ -323,22 +323,22 @@
 }
 
 /* Vista Lista */
-.class-schedule-list {
+.schedule-list {
   background-color: white;
   border-radius: 0.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   padding: 1.5rem;
 }
 
-.class-schedule-list-day {
+.schedule-list-day {
   margin-bottom: 2rem;
 }
 
-.class-schedule-list-day:last-child {
+.schedule-list-day:last-child {
   margin-bottom: 0;
 }
 
-.class-schedule-list-day-title {
+.schedule-list-day-title {
   font-size: 1.125rem;
   font-weight: 600;
   color: #1f2937;
@@ -347,20 +347,20 @@
   border-bottom: 2px solid #e5e7eb;
 }
 
-.class-schedule-list-items {
+.schedule-list-items {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
 }
 
-.class-schedule-list-empty {
+.schedule-list-empty {
   color: #9ca3af;
   font-style: italic;
   font-size: 0.875rem;
   padding: 1rem 0;
 }
 
-.class-schedule-list-item {
+.schedule-list-item {
   display: flex;
   gap: 1rem;
   padding: 0.75rem;
@@ -370,62 +370,62 @@
   transition: all 0.2s;
 }
 
-.class-schedule-list-item:hover {
+.schedule-list-item:hover {
   background-color: #f3f4f6;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.class-schedule-list-time {
+.schedule-list-item-time {
   font-size: 0.875rem;
   font-weight: 600;
   color: #1e293b;
   min-width: 100px;
 }
 
-.class-schedule-list-details {
+.schedule-list-item-details {
   flex: 1;
 }
 
-.class-schedule-list-code {
+.schedule-list-item-code {
   font-size: 0.875rem;
   font-weight: 700;
   color: #1f2937;
   margin-bottom: 0.25rem;
 }
 
-.class-schedule-list-name {
+.schedule-list-item-name {
   font-size: 0.875rem;
   color: #374151;
   margin-bottom: 0.25rem;
 }
 
-.class-schedule-list-location {
+.schedule-list-item-location {
   font-size: 0.75rem;
   color: #6b7280;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .class-schedule-week-navigation {
+  .schedule-week-navigation {
     flex-direction: column;
     gap: 1rem;
   }
 
-  .class-schedule-week-range {
+  .schedule-week-range {
     font-size: 0.875rem;
   }
 
-  .class-schedule-view-options {
+  .schedule-view-options {
     flex-direction: column;
     gap: 0.75rem;
   }
 
-  .class-schedule-list-item {
+  .schedule-list-item {
     flex-direction: column;
     gap: 0.5rem;
   }
 
-  .class-schedule-list-time {
+  .schedule-list-item-time {
     min-width: auto;
   }
 }

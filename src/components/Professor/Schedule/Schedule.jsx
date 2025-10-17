@@ -85,59 +85,59 @@ const Schedule = ({ setCurrentView }) => {
   };
 
   return (
-    <div className="class-schedule-wrapper">
+    <div className="schedule-wrapper">
       {/* Header */}
-      <header className="class-schedule-header">
-        <div className="class-schedule-header-content">
+      <header className="schedule-header">
+        <div className="schedule-header-content">
           <button
             onClick={() => setCurrentView('professor-dashboard')}
-            className="class-schedule-back-button"
+            className="schedule-back-button"
           >
             <ChevronLeft size={20} />
-            <span className="class-schedule-back-text">Profesor</span>
+            <span className="schedule-back-text">Profesor</span>
           </button>
 
-          <h1 className="class-schedule-title">Horario de Clases</h1>
+          <h1 className="schedule-title">Horario de Clases</h1>
 
-          <div className="class-schedule-nav">
+          <div className="schedule-nav">
             <button
               onClick={() => setCurrentView('professor-dashboard')}
-              className="class-schedule-nav-button"
+              className="schedule-nav-button"
             >
               <Home size={20} />
             </button>
             <button
               onClick={() => setCurrentView('messages-professor')}
-              className="class-schedule-nav-button"
+              className="schedule-nav-button"
             >
               <Bell size={20} />
-              <span className="class-schedule-notification-badge"></span>
+              <span className="schedule-notification-badge"></span>
             </button>
-            <div className="class-schedule-menu-wrapper">
+            <div className="schedule-menu-wrapper">
               <button
                 onClick={() => setShowMenu(!showMenu)}
-                className="class-schedule-nav-button"
+                className="schedule-nav-button"
               >
                 <MoreVertical size={20} />
               </button>
               
               {showMenu && (
-                <div className="class-schedule-dropdown">
+                <div className="schedule-dropdown">
                   <button
                     onClick={() => handleMenuClick('class-management-professor')}
-                    className="class-schedule-dropdown-item"
+                    className="schedule-dropdown-item"
                   >
                     Gestión de Clases
                   </button>
                   <button
                     onClick={() => handleMenuClick('classes-records')}
-                    className="class-schedule-dropdown-item"
+                    className="schedule-dropdown-item"
                   >
                     Registro de clases
                   </button>
                   <button
                     onClick={() => handleMenuClick('professor-user')}
-                    className="class-schedule-dropdown-item"
+                    className="schedule-dropdown-item"
                   >
                     Mi Perfil
                   </button>
@@ -148,12 +148,12 @@ const Schedule = ({ setCurrentView }) => {
         </div>
       </header>
 
-      <div className="class-schedule-content">
-        <div className="class-schedule-main">
+      <div className="schedule-content">
+        <div className="schedule-main">
           {/* Controles superiores */}
-          <div className="class-schedule-controls">
-            <div className="class-schedule-view-options">
-              <label className="class-schedule-radio-label">
+          <div className="schedule-controls">
+            <div className="schedule-view-options">
+              <label className="schedule-radio-label">
                 <input
                   type="radio"
                   name="viewMode"
@@ -162,7 +162,7 @@ const Schedule = ({ setCurrentView }) => {
                 />
                 <span>Vista Listado</span>
               </label>
-              <label className="class-schedule-radio-label">
+              <label className="schedule-radio-label">
                 <input
                   type="radio"
                   name="viewMode"
@@ -175,18 +175,18 @@ const Schedule = ({ setCurrentView }) => {
           </div>
 
           {/* Navegación de semanas */}
-          <div className="class-schedule-week-navigation">
+          <div className="schedule-week-navigation">
             <button
               onClick={() => setCurrentWeek(currentWeek - 1)}
-              className="class-schedule-week-button"
+              className="schedule-week-button"
             >
               <ChevronLeft size={20} />
               Semana Anterior
             </button>
-            <span className="class-schedule-week-range">Semana de {getWeekRange()}</span>
+            <span className="schedule-week-range">Semana de {getWeekRange()}</span>
             <button
               onClick={() => setCurrentWeek(currentWeek + 1)}
-              className="class-schedule-week-button"
+              className="schedule-week-button"
             >
               Semana Siguiente
               <ChevronRight size={20} />
@@ -195,13 +195,13 @@ const Schedule = ({ setCurrentView }) => {
 
           {/* Horario Semanal */}
           {viewMode === 'semanal' && (
-            <div className="class-schedule-calendar">
-              <div className="class-schedule-grid">
+            <div className="schedule-calendar">
+              <div className="schedule-grid">
                 {/* Header de días */}
-                <div className="class-schedule-time-column">
-                  <div className="class-schedule-hour-header">Hora</div>
+                <div className="schedule-time-column">
+                  <div className="schedule-hour-header">Hora</div>
                   {hours.map((hour, index) => (
-                    <div key={index} className="class-schedule-hour-cell">
+                    <div key={index} className="schedule-hour-cell">
                       {hour}
                     </div>
                   ))}
@@ -209,27 +209,27 @@ const Schedule = ({ setCurrentView }) => {
 
                 {/* Columnas de días */}
                 {days.slice(0, 5).map((day, dayIndex) => (
-                  <div key={dayIndex} className="class-schedule-day-column">
-                    <div className="class-schedule-day-header">
-                      <div className="class-schedule-day-name">{day}</div>
-                      <div className="class-schedule-day-date">{getDayDate(dayIndex)}</div>
+                  <div key={dayIndex} className="schedule-day-column">
+                    <div className="schedule-day-header">
+                      <div className="schedule-day-name">{day}</div>
+                      <div className="schedule-day-date">{getDayDate(dayIndex)}</div>
                     </div>
                     {hours.map((hour, hourIndex) => {
                       const classes = getClassesForDayAndHour(day, hour);
                       return (
-                        <div key={hourIndex} className="class-schedule-hour-slot">
+                        <div key={hourIndex} className="schedule-hour-slot">
                           {classes.map(cls => (
                             <div
                               key={cls.id}
                               className="class-schedule-class-block"
                               style={{ backgroundColor: cls.color }}
                             >
-                              <div className="class-schedule-class-code">{cls.code}</div>
-                              <div className="class-schedule-class-name">{cls.name}</div>
-                              <div className="class-schedule-class-time">
+                              <div className="schedule-class-code">{cls.code}</div>
+                              <div className="schedule-class-name">{cls.name}</div>
+                              <div className="schedule-class-time">
                                 {cls.startTime} - {cls.endTime}
                               </div>
-                              <div className="class-schedule-class-location">{cls.building}</div>
+                              <div className="schedule-class-location">{cls.building}</div>
                             </div>
                           ))}
                         </div>
@@ -243,23 +243,23 @@ const Schedule = ({ setCurrentView }) => {
 
           {/* Vista Lista */}
           {viewMode === 'lista' && (
-            <div className="class-schedule-list">
+            <div className="schedule-list">
               {days.slice(0, 5).map((day, index) => {
                 const dayClasses = schedule.filter(cls => cls.day === day);
                 return (
-                  <div key={index} className="class-schedule-list-day">
-                    <h3 className="class-schedule-list-day-title">{day}</h3>
-                    <div className="class-schedule-list-items">
+                  <div key={index} className="schedule-list-day">
+                    <h3 className="schedule-list-day-title">{day}</h3>
+                    <div className="schedule-list-items">
                       {dayClasses.length === 0 ? (
-                        <p className="class-schedule-list-empty">No hay clases programadas</p>
+                        <p className="schedule-list-empty">No hay clases programadas</p>
                       ) : (
                         dayClasses.map(cls => (
-                          <div key={cls.id} className="class-schedule-list-item">
-                            <div className="class-schedule-list-time">{cls.startTime} - {cls.endTime}</div>
-                            <div className="class-schedule-list-details">
-                              <div className="class-schedule-list-code">{cls.code}</div>
-                              <div className="class-schedule-list-name">{cls.name}</div>
-                              <div className="class-schedule-list-location">{cls.building}</div>
+                          <div key={cls.id} className="schedule-list-item">
+                            <div className="schedule-list-time">{cls.startTime} - {cls.endTime}</div>
+                            <div className="schedule-list-details">
+                              <div className="schedule-list-code">{cls.code}</div>
+                              <div className="schedule-list-name">{cls.name}</div>
+                              <div className="schedule-list-location">{cls.building}</div>
                             </div>
                           </div>
                         ))
