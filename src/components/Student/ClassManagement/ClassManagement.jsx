@@ -7,16 +7,7 @@ import SearchInscription from './SearchInscription';
 import ModificationRequest from './ModificationRequest';
 import SeccionEnDesarrollo from './SeccionEnDesarrollo';
 
-import {
-  BookOpen,
-  ShoppingCart as CartIcon,
-  Search,
-  FileText,
-  RefreshCw,
-  Shuffle,
-  BookMarked,
-  Edit3,
-} from 'lucide-react';
+// Usamos emojis a color para los íconos del menú lateral
 
 const ClassManagement = () => {
   // 📌 Estado para controlar qué pestaña está activa
@@ -47,6 +38,29 @@ const ClassManagement = () => {
         },
       ],
     },
+    {
+      id: 2,
+      code: 'ECOADPR FCFI',
+      name: 'Fundamentos contables y financieros',
+      status: 'Inscrito',
+      units: 3,
+      program: 'Ingeniería de Sistemas',
+      gradingSystem: 'Plan de Calificación Pregrado Numérico 3,0',
+      schedules: [
+        {
+          dates: '11/08/2025 - 17/12/2025',
+          days: 'Lunes',
+          hours: '9:00AM A 11:00AM',
+          room: 'A-201',
+        },
+        {
+          dates: '11/08/2025 - 17/12/2025',
+          days: 'Jueves',
+          hours: '1:00PM A 3:00PM',
+          room: 'A-201',
+        },
+      ],
+    },
   ];
 
   const requests = [
@@ -57,7 +71,10 @@ const ClassManagement = () => {
     <div className="class-management-container">
       {/* 🧭 Menú lateral */}
       <aside className="class-management-sidebar">
-        <h2 className="class-management-sidebar-title">Alumnos</h2>
+        <div className="class-management-sidebar-header">
+          <span className="class-management-back-arrow">‹</span>
+          <h2 className="class-management-sidebar-title">Alumnos</h2>
+        </div>
 
         <button
           className={`class-management-menu-item ${
@@ -65,7 +82,8 @@ const ClassManagement = () => {
           }`}
           onClick={() => setActiveTab('mis-clases')}
         >
-          <BookOpen size={18} /> Mis Clases
+          <span className="class-management-emoji" aria-hidden>📚</span>
+          <span>Mis Clases</span>
         </button>
 
         <button
@@ -74,7 +92,8 @@ const ClassManagement = () => {
           }`}
           onClick={() => setActiveTab('carrito')}
         >
-          <CartIcon size={18} /> Carrito de Compras
+          <span className="class-management-emoji" aria-hidden>🛒</span>
+          <span>Carrito de Compras</span>
         </button>
 
         <button
@@ -83,7 +102,8 @@ const ClassManagement = () => {
           }`}
           onClick={() => setActiveTab('busqueda')}
         >
-          <Search size={18} /> Búsqueda e Inscripción Clases
+          <span className="class-management-emoji" aria-hidden>🔎</span>
+          <span>Búsqueda e Inscripción Clases</span>
         </button>
 
         <button
@@ -92,7 +112,8 @@ const ClassManagement = () => {
           }`}
           onClick={() => setActiveTab('baja')}
         >
-          <FileText size={18} /> Baja de Clases
+          <span className="class-management-emoji" aria-hidden>🧾</span>
+          <span>Baja de Clases</span>
         </button>
 
         <button
@@ -101,7 +122,8 @@ const ClassManagement = () => {
           }`}
           onClick={() => setActiveTab('actualizacion')}
         >
-          <RefreshCw size={18} /> Actualización de Clases
+          <span className="class-management-emoji" aria-hidden>🔄</span>
+          <span>Actualización de Clases</span>
         </button>
 
         <button
@@ -110,7 +132,8 @@ const ClassManagement = () => {
           }`}
           onClick={() => setActiveTab('cambio')}
         >
-          <Shuffle size={18} /> Cambio de Clases
+          <span className="class-management-emoji" aria-hidden>🔁</span>
+          <span>Cambio de Clases</span>
         </button>
 
         <button
@@ -119,7 +142,8 @@ const ClassManagement = () => {
           }`}
           onClick={() => setActiveTab('catalogo')}
         >
-          <BookMarked size={18} /> Búsqueda en Catálogo de Cursos
+          <span className="class-management-emoji" aria-hidden>📘</span>
+          <span>Búsqueda en Catálogo de Cursos</span>
         </button>
 
         <button
@@ -128,7 +152,8 @@ const ClassManagement = () => {
           }`}
           onClick={() => setActiveTab('inscribir')}
         >
-          <Edit3 size={18} /> Inscribir p/Mis Cond Acad
+          <span className="class-management-emoji" aria-hidden>📝</span>
+          <span>Inscribir p/Mis Cond Acad</span>
         </button>
 
         <button
@@ -137,7 +162,8 @@ const ClassManagement = () => {
           }`}
           onClick={() => setActiveTab('solicitud')}
         >
-          <FileText size={18} /> Sol. Modificación Inscripción
+          <span className="class-management-emoji" aria-hidden>✏️</span>
+          <span>Sol. Modificación Inscripción</span>
         </button>
       </aside>
 

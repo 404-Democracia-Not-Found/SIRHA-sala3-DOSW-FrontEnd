@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import './ClassManagement.css';
 
-const MisClases = ({ myClasses }) => {
+const MyClasses = ({ myClasses }) => {
   const [selectedView, setSelectedView] = useState('por-clase');
   const [showInscribed, setShowInscribed] = useState(true);
   const [showDropped, setShowDropped] = useState(false);
@@ -54,14 +55,32 @@ const MisClases = ({ myClasses }) => {
           </div>
           <div className="class-management-class-body">
             {/* Información de clase */}
-            <div className="class-management-class-info-grid">
-              <div>
-                <span>Estado</span>
-                <span>{classItem.status}</span>
+            <div className="class-management-class-info-row">
+              <div className="class-management-class-info-item">
+                <span className="class-management-class-info-label">Estado</span>
+                <span className="class-management-class-info-value">{classItem.status}</span>
               </div>
-              <div>
-                <span>Unidades</span>
-                <span>{classItem.units}</span>
+              <div className="class-management-class-info-item">
+                <span className="class-management-class-info-label">Unidades</span>
+                <span className="class-management-class-info-value">{classItem.units.toFixed(2)}</span>
+              </div>
+            </div>
+
+            <div className="class-management-class-info-row">
+              <div className="class-management-class-info-item">
+                <span className="class-management-class-info-label">Sistema Calif</span>
+                <span className="class-management-class-info-value">{classItem.gradingSystem}</span>
+              </div>
+              <div className="class-management-class-info-item">
+                <span className="class-management-class-info-label">Calif</span>
+                <span className="class-management-class-info-value">-</span>
+              </div>
+            </div>
+
+            <div className="class-management-class-info-row">
+              <div className="class-management-class-info-item class-management-class-info-item-full">
+                <span className="class-management-class-info-label">Programa Académico</span>
+                <span className="class-management-class-info-value">{classItem.program}</span>
               </div>
             </div>
 
@@ -70,22 +89,32 @@ const MisClases = ({ myClasses }) => {
               <thead>
                 <tr>
                   <th>Clase</th>
-                  <th>Fechas</th>
+                  <th>Fechas Inicio/Fin</th>
                   <th>Días y Horas</th>
                   <th>Aula</th>
                 </tr>
               </thead>
               <tbody>
-                {classItem.schedules.map((schedule, index) => (
-                  <tr key={index}>
-                    <td>{index === 0 ? classItem.code : ''}</td>
+                {classItem.schedules.map((schedule) => (
+                  <tr key={`${classItem.id}-${schedule.dates}-${schedule.days}`}>
+                    <td>{schedule === classItem.schedules[0] ? classItem.code : ''}</td>
                     <td>{schedule.dates}</td>
-                    <td>{schedule.days}<br />{schedule.hours}</td>
+                    <td>
+                      <div>Días: {schedule.days}</div>
+                      <div>Horas: {schedule.hours}</div>
+                    </td>
                     <td>{schedule.room}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
+
+            <button 
+              onClick={() => console.log('Ver límites de inscripción')}
+              className="class-management-class-link"
+            >
+              Límites Inscripción
+            </button>
           </div>
         </div>
       ))}
@@ -93,4 +122,26 @@ const MisClases = ({ myClasses }) => {
   );
 };
 
-export default MisClases;
+MyClasses.propTypes = {
+  myClasses: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      code: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      status: PropTypes.string.isRequired,
+      units: PropTypes.number.isRequired,
+      program: PropTypes.string.isRequired,
+      gradingSystem: PropTypes.string.isRequired,
+      schedules: PropTypes.arrayOf(
+        PropTypes.shape({
+          dates: PropTypes.string.isRequired,
+          days: PropTypes.string.isRequired,
+          hours: PropTypes.string.isRequired,
+          room: PropTypes.string.isRequired,
+        })
+      ).isRequired,
+    })
+  ).isRequired,
+};
+
+export default MyClasses;

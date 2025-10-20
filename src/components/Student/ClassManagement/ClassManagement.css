@@ -1,167 +1,77 @@
-.class-management-wrapper {
+.class-management-container {
   display: flex;
-  flex-direction: column;
   height: 100vh;
   background-color: #f3f4f6;
 }
 
-.class-management-header {
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-  color: white;
-  background-color: #A10000;
-}
-
-.class-management-header-content {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0.75rem 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.class-management-back-button {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.25rem 0.75rem;
-  border-radius: 0.25rem;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.class-management-back-button:hover {
-  background-color: #8B0000;
-}
-
-.class-management-back-text {
-  font-weight: 500;
-}
-
-.class-management-title {
-  font-size: 1.25rem;
-  font-weight: bold;
-}
-
-.class-management-nav {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.class-management-nav-button {
-  padding: 0.5rem;
-  border-radius: 50%;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  position: relative;
-}
-
-.class-management-nav-button:hover {
-  background-color: #8B0000;
-}
-
-.class-management-notification-badge {
-  position: absolute;
-  top: 0.25rem;
-  right: 0.25rem;
-  display: block;
-  height: 0.5rem;
-  width: 0.5rem;
-  border-radius: 50%;
-  background-color: white;
-  border: 2px solid #A10000;
-}
-
-.class-management-menu-wrapper {
-  position: relative;
-}
-
-.class-management-dropdown {
-  position: absolute;
-  right: 0;
-  margin-top: 0.5rem;
-  width: 12rem;
-  background-color: white;
-  border-radius: 0.375rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  padding: 0.25rem 0;
-  z-index: 10;
-}
-
-.class-management-dropdown-item {
-  display: block;
-  width: 100%;
-  text-align: left;
-  padding: 0.5rem 1rem;
-  font-size: 0.875rem;
-  color: #374151;
-  background: none;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.class-management-dropdown-item:hover {
-  background-color: #f3f4f6;
-}
-
-.class-management-content {
-  display: flex;
-  flex: 1;
-  overflow: hidden;
-}
-
 .class-management-sidebar {
-  width: 16rem;
+  width: 220px;
   background-color: #e5e7eb;
   border-right: 1px solid #d1d5db;
+  overflow-y: auto;
 }
 
-.class-management-sidebar-content {
+.class-management-sidebar-header {
+  background-color: #A10000;
+  color: white;
   padding: 1rem;
-}
-
-.class-management-sidebar-button {
-  width: 100%;
-  text-align: left;
-  padding: 0.75rem 1rem;
-  margin-bottom: 0.5rem;
-  border-radius: 0.25rem;
-  background-color: white;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
   display: flex;
   align-items: center;
-  gap: 0.75rem; /* espacio entre icono y texto aumentado */
-  font-size: 0.9rem;
-  color: #374151;
+  gap: 0.5rem;
 }
 
-/* Espacio entre icono y texto */
-.class-management-sidebar-button svg {
+.class-management-back-arrow {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.class-management-sidebar-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.class-management-menu-item {
+  width: calc(100% - 1rem);
+  margin: 0.5rem;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: #374151;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+.class-management-menu-item svg {
   flex-shrink: 0;
   width: 18px;
   height: 18px;
 }
 
-/* Hover más claro y con desplazamiento */
-.class-management-sidebar-button:hover {
-  background-color: #f3f4f6;
+.class-management-menu-item:hover {
+  background-color: #f9fafb;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+}
+
+.class-management-menu-item.active {
+  background-color: #ecfdf5;
+  border-color: #34d399;
+  box-shadow: 0 0 0 2px rgba(16,185,129,0.2) inset;
+  font-weight: 600;
+  color: #065f46;
   transform: translateX(2px);
 }
 
-.class-management-sidebar-button-active {
-  background-color: #bbf7d0;
-  border-left: 4px solid #16a34a;
-  font-weight: 600;
+.class-management-emoji {
+  font-size: 1.15rem;
+  line-height: 1;
 }
 
 .class-management-main {
@@ -245,73 +155,89 @@
 }
 
 .class-management-class-header {
-  background-color: #d97706;
+  background-color: #ea580c;
   color: white;
   padding: 0.75rem 1rem;
   font-weight: 600;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  font-size: 0.9rem;
 }
 
 .class-management-class-body {
   padding: 1rem;
 }
 
-.class-management-class-info-grid {
+.class-management-class-info-row {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .class-management-class-info-item {
   display: flex;
   flex-direction: column;
+  gap: 0.25rem;
+}
+
+.class-management-class-info-item-full {
+  grid-column: 1 / -1;
 }
 
 .class-management-class-info-label {
   font-size: 0.75rem;
   color: #6b7280;
-  margin-bottom: 0.25rem;
+  font-weight: 500;
 }
 
 .class-management-class-info-value {
   font-size: 0.875rem;
   color: #111827;
-  font-weight: 500;
 }
 
 .class-management-class-schedule-table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 1rem;
+  font-size: 0.875rem;
 }
 
 .class-management-class-schedule-table th {
-  background-color: #f9fafb;
+  background-color: #f3f4f6;
   padding: 0.5rem;
   text-align: left;
   font-size: 0.75rem;
   font-weight: 600;
   color: #374151;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #d1d5db;
 }
 
 .class-management-class-schedule-table td {
   padding: 0.5rem;
   font-size: 0.875rem;
   color: #111827;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #d1d5db;
+  vertical-align: top;
+}
+
+.class-management-class-schedule-table td div {
+  margin-bottom: 0.25rem;
+}
+
+.class-management-class-schedule-table td div:last-child {
+  margin-bottom: 0;
 }
 
 .class-management-class-link {
   color: #2563eb;
   text-decoration: none;
   font-size: 0.875rem;
-  margin-top: 0.5rem;
+  margin-top: 0.75rem;
   display: inline-block;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
 }
 
 .class-management-class-link:hover {
