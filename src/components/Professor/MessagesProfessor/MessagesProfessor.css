@@ -1,0 +1,230 @@
+.prof-messages-container {
+  min-height: 100vh;
+  background-color: #f3f4f6;
+}
+
+.prof-messages-header {
+  background-color: #1e293b;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+.prof-messages-header-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.prof-messages-header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.prof-messages-back-button {
+  padding: 0.5rem;
+  border-radius: 50%;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.prof-messages-back-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.prof-messages-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.prof-messages-options-button {
+  padding: 0.5rem;
+  border-radius: 50%;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.prof-messages-options-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.prof-messages-search-section {
+  background-color: white;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 0.75rem 1rem;
+}
+
+.prof-messages-search-wrapper {
+  position: relative;
+  max-width: 28rem;
+  margin: 0 auto;
+}
+
+.prof-messages-search-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+}
+
+.prof-messages-search-input {
+  width: 100%;
+  padding: 0.5rem 1rem 0.5rem 2.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.prof-messages-search-input:focus {
+  border-color: #1e293b;
+  box-shadow: 0 0 0 2px rgba(153, 27, 27, 0.1);
+}
+
+.prof-messages-main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+.prof-messages-list-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.prof-messages-empty-state {
+  padding: 2rem;
+  text-align: center;
+  color: #6b7280;
+}
+
+.prof-messages-divider {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.prof-messages-item {
+  padding: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  position: relative;
+}
+
+.prof-messages-item:hover {
+  background-color: #f9fafb;
+}
+
+.prof-messages-item-unread {
+  background-color: #eff6ff;
+  border-left: 4px solid #1e293b;
+}
+
+.prof-messages-item-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.prof-messages-item-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.prof-messages-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.prof-messages-item-sender {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.prof-messages-item-sender-unread {
+  color: #111827;
+}
+
+.prof-messages-item-time {
+  font-size: 0.75rem;
+  color: #6b7280;
+  flex-shrink: 0;
+  margin-left: 0.5rem;
+}
+
+.prof-messages-item-subject {
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.prof-messages-item-subject-unread {
+  font-weight: 600;
+  color: #111827;
+}
+
+.prof-messages-item-preview {
+  font-size: 0.875rem;
+  color: #4b5563;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.prof-messages-item-unread-indicator {
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: #1e293b;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-left: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.prof-messages-no-results {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 3rem;
+  text-align: center;
+}
+
+.prof-messages-no-results-icon-wrapper {
+  width: 4rem;
+  height: 4rem;
+  background-color: #f3f4f6;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prof-messages-no-results-icon {
+  color: #9ca3af;
+}
+
+.prof-messages-no-results-title {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.prof-messages-no-results-text {
+  color: #6b7280;
+}

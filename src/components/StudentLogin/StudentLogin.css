@@ -1,0 +1,174 @@
+.student-login-container {
+  min-height: 100vh;
+  background-color: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.student-login-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  width: 100%;
+  max-width: 28rem;
+}
+
+.student-login-logo-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.student-login-logo {
+  width: 4rem;
+  height: 4rem;
+  background-color: #e5e7eb;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.student-login-logo-inner {
+  width: 2rem;
+  height: 2rem;
+  background-color: #9ca3af;
+  border-radius: 0.25rem;
+}
+
+.student-login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.student-login-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.student-login-subtitle {
+  color: #4b5563;
+}
+
+.student-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.student-login-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.student-login-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.student-login-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.student-login-input:focus {
+  border-color: #991b1b;
+  box-shadow: 0 0 0 2px rgba(153, 27, 27, 0.1);
+}
+
+.student-login-error-box {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.student-login-error-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: #ef4444;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.student-login-error-icon-text {
+  color: white;
+  font-size: 0.75rem;
+}
+
+.student-login-error-text {
+  color: #b91c1c;
+  font-size: 0.875rem;
+}
+
+.student-login-button {
+  width: 100%;
+  background-color: #991b1b;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.student-login-button:hover {
+  background-color: #7f1d1d;
+}
+
+.student-login-recovery-link {
+  text-align: center;
+}
+
+.student-login-recovery-button {
+  color: #dc2626;
+  font-size: 0.875rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.student-login-recovery-button:hover {
+  color: #b91c1c;
+}
+
+.student-login-back-section {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.student-login-back-button {
+  color: #dc2626;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: color 0.3s;
+}
+
+.student-login-back-button:hover {
+  color: #b91c1c;
+}
