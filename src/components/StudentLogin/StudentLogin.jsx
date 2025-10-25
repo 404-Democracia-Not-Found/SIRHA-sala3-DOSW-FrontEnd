@@ -90,19 +90,6 @@ const StudentLogin = ({ setCurrentView }) => {
               ¿Olvidaste tu Contraseña?
             </button>
           </div>
-
-          {/* Separador */}
-          <div className="student-login-divider">
-            <span className="student-login-divider-text">o</span>
-          </div>
-
-          {/* Botón de registro */}
-          <button
-            onClick={() => setCurrentView('registration')}
-            className="student-login-register-button"
-          >
-            Crear Cuenta Nueva
-          </button>
         </div>
 
         {/* Botón atrás */}

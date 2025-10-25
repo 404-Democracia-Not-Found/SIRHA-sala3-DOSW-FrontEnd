@@ -156,52 +156,6 @@
   color: #b91c1c;
 }
 
-/* Separador */
-.admin-login-divider {
-  position: relative;
-  text-align: center;
-  margin: 1.5rem 0;
-}
-
-.admin-login-divider::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background-color: #e5e7eb;
-}
-
-.admin-login-divider-text {
-  position: relative;
-  background-color: white;
-  padding: 0 1rem;
-  color: #9ca3af;
-  font-size: 0.875rem;
-}
-
-/* Botón de registro */
-.admin-login-register-button {
-  width: 100%;
-  padding: 0.75rem;
-  background-color: white;
-  color: #dc2626;
-  border: 2px solid #dc2626;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-
-.admin-login-register-button:hover {
-  background-color: #dc2626;
-  color: white;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
 .admin-login-switch-section {
   margin-top: 1.5rem;
   text-align: center;

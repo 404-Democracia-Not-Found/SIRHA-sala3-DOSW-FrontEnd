@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import RoleSelection from './components/RoleSelection/RoleSelection';
 import StudentLogin from './components/StudentLogin/StudentLogin';
 import AdminLogin from './components//AdminLogin/AdminLogin';
+import CoordinatorLogin from './components/CoordinatorLogin/CoordinatorLogin';
 import PasswordRecovery from './components/PasswordRecovery/PasswordRecovery';
 import StudentDashboard from './components//Student/StudentDashboard/StudentDashboard';
 import Messages from './components/Student/Messages/Messages';
@@ -22,7 +23,6 @@ import RequestReviews from './components/Administrative/RequestReviews/RequestRe
 import AdministrativeUser from './components/Administrative/AdministrativeUser/AdministrativeUser';
 import ScheduleAdmin from './components/Administrative/ScheduleAdmin/ScheduleAdmin';
 import Registration from './components/Administrative/Registration/Registration';
-import PublicRegistration from './components/PublicRegistration/PublicRegistration';
 
 const App = () => {
   const [currentView, setCurrentView] = useState('role-selection');
@@ -32,6 +32,7 @@ const App = () => {
       {currentView === 'role-selection' && <RoleSelection setCurrentView={setCurrentView} />}
       {currentView === 'student-login' && <StudentLogin setCurrentView={setCurrentView} />}
       {currentView === 'admin-login' && <AdminLogin setCurrentView={setCurrentView} />}
+      {currentView === 'coordinator-login' && <CoordinatorLogin setCurrentView={setCurrentView} />}
       {currentView === 'password-recovery' && <PasswordRecovery setCurrentView={setCurrentView} />}
       {currentView === 'student-dashboard' && <StudentDashboard setCurrentView={setCurrentView} />}
       {currentView === 'messages' && <Messages setCurrentView={setCurrentView} />}
@@ -50,8 +51,7 @@ const App = () => {
       {currentView === 'request-reviews' && <RequestReviews setCurrentView={setCurrentView} />}
       {currentView === 'administrative-user' && <AdministrativeUser setCurrentView={setCurrentView} />}
       {currentView === 'schedule-admin' && <ScheduleAdmin setCurrentView={setCurrentView} />}
-      {currentView === 'admin-registration' && <Registration setCurrentView={setCurrentView} />}
-      {currentView === 'registration' && <PublicRegistration setCurrentView={setCurrentView} />}
+      {currentView === 'registration' && <Registration setCurrentView={setCurrentView} />}
     </div>
   );
 };
