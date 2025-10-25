@@ -111,7 +111,7 @@ const AdministrativeDashboard = ({ setCurrentView }) => {
 
           {/* Registro */}
           <button
-            onClick={() => setCurrentView('registration')}
+            onClick={() => setCurrentView('admin-registration')}
             className="administrative-dashboard-card"
           >
             <ClipboardList className="administrative-dashboard-card-icon" />

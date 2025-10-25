@@ -57,6 +57,25 @@
   gap: 0.5rem;
 }
 
+.registration-add-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: #A10000;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.registration-add-button:hover {
+  background-color: #8a0000;
+}
+
 .registration-nav-button {
   padding: 0.5rem;
   border-radius: 50%;

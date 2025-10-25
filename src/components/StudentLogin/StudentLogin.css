@@ -152,6 +152,52 @@
   color: #b91c1c;
 }
 
+/* Separador */
+.student-login-divider {
+  position: relative;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.student-login-divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #e5e7eb;
+}
+
+.student-login-divider-text {
+  position: relative;
+  background-color: white;
+  padding: 0 1rem;
+  color: #9ca3af;
+  font-size: 0.875rem;
+}
+
+/* Botón de registro */
+.student-login-register-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: white;
+  color: #991b1b;
+  border: 2px solid #991b1b;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.student-login-register-button:hover {
+  background-color: #991b1b;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 .student-login-back-section {
   margin-top: 2rem;
   text-align: center;

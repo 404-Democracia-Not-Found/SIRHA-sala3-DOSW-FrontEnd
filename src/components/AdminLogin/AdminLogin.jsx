@@ -84,6 +84,19 @@ const AdminLogin = ({ setCurrentView }) => {
                 ¿Olvidaste tu contraseña?
               </button>
             </div>
+
+            {/* Separador */}
+            <div className="admin-login-divider">
+              <span className="admin-login-divider-text">o</span>
+            </div>
+
+            {/* Botón de registro */}
+            <button
+              onClick={() => setCurrentView('registration')}
+              className="admin-login-register-button"
+            >
+              Crear Cuenta Nueva
+            </button>
           </div>
 
           <div className="admin-login-switch-section">

@@ -1,0 +1,164 @@
+/* Estilos para registro público */
+
+.public-registration-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #991b1b 0%, #7f1d1d 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.public-registration-container {
+  max-width: 700px;
+  width: 100%;
+}
+
+.public-registration-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.public-registration-logo {
+  width: 80px;
+  height: 80px;
+  background-color: white;
+  border-radius: 50%;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.public-registration-logo-inner {
+  width: 50px;
+  height: 50px;
+  background-color: #991b1b;
+  border-radius: 0.5rem;
+  transform: rotate(45deg);
+}
+
+.public-registration-main-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.public-registration-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.public-registration-form-section {
+  background-color: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  margin-bottom: 1.5rem;
+}
+
+.public-registration-back-section {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.public-registration-back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.public-registration-back-button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.public-registration-back-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.public-registration-footer {
+  text-align: center;
+}
+
+.public-registration-footer-text {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.9rem;
+}
+
+.public-registration-footer-link {
+  color: white;
+  font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 0.9rem;
+  transition: opacity 0.3s ease;
+}
+
+.public-registration-footer-link:hover:not(:disabled) {
+  opacity: 0.8;
+}
+
+.public-registration-footer-link:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .public-registration-wrapper {
+    padding: 1rem;
+  }
+
+  .public-registration-main-title {
+    font-size: 1.75rem;
+  }
+
+  .public-registration-form-section {
+    padding: 1.5rem;
+  }
+
+  .public-registration-logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  .public-registration-logo-inner {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .public-registration-wrapper {
+    padding: 0.5rem;
+  }
+
+  .public-registration-main-title {
+    font-size: 1.5rem;
+  }
+
+  .public-registration-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .public-registration-form-section {
+    padding: 1rem;
+    border-radius: 0.75rem;
+  }
+}

@@ -22,6 +22,7 @@ import RequestReviews from './components/Administrative/RequestReviews/RequestRe
 import AdministrativeUser from './components/Administrative/AdministrativeUser/AdministrativeUser';
 import ScheduleAdmin from './components/Administrative/ScheduleAdmin/ScheduleAdmin';
 import Registration from './components/Administrative/Registration/Registration';
+import PublicRegistration from './components/PublicRegistration/PublicRegistration';
 
 const App = () => {
   const [currentView, setCurrentView] = useState('role-selection');
@@ -49,7 +50,8 @@ const App = () => {
       {currentView === 'request-reviews' && <RequestReviews setCurrentView={setCurrentView} />}
       {currentView === 'administrative-user' && <AdministrativeUser setCurrentView={setCurrentView} />}
       {currentView === 'schedule-admin' && <ScheduleAdmin setCurrentView={setCurrentView} />}
-      {currentView === 'registration' && <Registration setCurrentView={setCurrentView} />}
+      {currentView === 'admin-registration' && <Registration setCurrentView={setCurrentView} />}
+      {currentView === 'registration' && <PublicRegistration setCurrentView={setCurrentView} />}
     </div>
   );
 };

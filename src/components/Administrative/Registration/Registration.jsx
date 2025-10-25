@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Home, Bell, ChevronLeft, Search, Plus, Users, UserCheck, UserX, Eye, Edit, Trash2, X } from 'lucide-react';
+import UserRegistrationForm from '../../common/UserRegistrationForm/UserRegistrationForm';
 import './Registration.css';
 
 const Registration = ({ setCurrentView }) => {
@@ -7,18 +8,8 @@ const Registration = ({ setCurrentView }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filterProgram, setFilterProgram] = useState('todos');
   const [filterStatus, setFilterStatus] = useState('todos');
-  const [formData, setFormData] = useState({
-    nombre: '',
-    apellido: '',
-    documento: '',
-    fechaNacimiento: '',
-    email: '',
-    telefono: '',
-    direccion: '',
-    programa: '',
-    periodo: '',
-    tipoEstudiante: 'pregrado'
-  });
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   // Datos de ejemplo de estudiantes
   const [students] = useState([
@@ -86,31 +77,33 @@ const Registration = ({ setCurrentView }) => {
     inactive: students.filter(s => s.estado === 'inactive').length
   };
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
+  const handleSubmit = async (userData) => {
+    setIsLoading(true);
+    setError(null);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Registrando nuevo estudiante:', formData);
-    alert('Estudiante registrado exitosamente');
-    setShowModal(false);
-    setFormData({
-      nombre: '',
-      apellido: '',
-      documento: '',
-      fechaNacimiento: '',
-      email: '',
-      telefono: '',
-      direccion: '',
-      programa: '',
-      periodo: '',
-      tipoEstudiante: 'pregrado'
-    });
+    try {
+      // Simular llamada a API (reemplazar con llamada real cuando esté disponible)
+      console.log('Registrando usuario:', userData);
+
+      // Simular delay de API
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
+      // Aquí iría la llamada real al backend
+      // const response = await fetch('/api/auth/register', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify(userData)
+      // });
+
+      alert('Usuario registrado exitosamente');
+      setShowModal(false);
+
+    } catch (err) {
+      setError('Error al registrar usuario. Intente nuevamente.');
+      throw err;
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleView = (studentId) => {
@@ -143,9 +136,16 @@ const Registration = ({ setCurrentView }) => {
             <span className="registration-back-text">Administrativo</span>
           </button>
 
-          <h1 className="registration-title">Registro de Estudiantes</h1>
+          <h1 className="registration-title">Gestión de Usuarios</h1>
 
           <div className="registration-nav">
+            <button
+              onClick={() => setShowModal(true)}
+              className="registration-add-button"
+            >
+              <Plus size={20} />
+              Agregar Usuario
+            </button>
             <button
               onClick={() => setCurrentView('administrative-dashboard')}
               className="registration-nav-button"
@@ -333,12 +333,12 @@ const Registration = ({ setCurrentView }) => {
         </div>
       </div>
 
-      {/* Modal for New Student */}
+      {/* Modal for New User */}
       {showModal && (
         <div className="registration-modal-overlay" onClick={() => setShowModal(false)}>
           <div className="registration-modal" onClick={(e) => e.stopPropagation()}>
             <div className="registration-modal-header">
-              <h2 className="registration-modal-title">Nuevo Estudiante</h2>
+              <h2 className="registration-modal-title">Nuevo Usuario</h2>
               <button
                 className="registration-modal-close"
                 onClick={() => setShowModal(false)}
@@ -347,162 +347,12 @@ const Registration = ({ setCurrentView }) => {
               </button>
             </div>
             <div className="registration-modal-body">
-              <form className="registration-form" onSubmit={handleSubmit}>
-                <div className="registration-form-group">
-                  <label className="registration-form-label">
-                    Nombre<span className="registration-form-required">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="nombre"
-                    value={formData.nombre}
-                    onChange={handleInputChange}
-                    className="registration-form-input"
-                    required
-                  />
-                </div>
-                <div className="registration-form-group">
-                  <label className="registration-form-label">
-                    Apellido<span className="registration-form-required">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="apellido"
-                    value={formData.apellido}
-                    onChange={handleInputChange}
-                    className="registration-form-input"
-                    required
-                  />
-                </div>
-                <div className="registration-form-group">
-                  <label className="registration-form-label">
-                    Documento<span className="registration-form-required">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="documento"
-                    value={formData.documento}
-                    onChange={handleInputChange}
-                    className="registration-form-input"
-                    required
-                  />
-                </div>
-                <div className="registration-form-group">
-                  <label className="registration-form-label">
-                    Fecha de Nacimiento<span className="registration-form-required">*</span>
-                  </label>
-                  <input
-                    type="date"
-                    name="fechaNacimiento"
-                    value={formData.fechaNacimiento}
-                    onChange={handleInputChange}
-                    className="registration-form-input"
-                    required
-                  />
-                </div>
-                <div className="registration-form-group">
-                  <label className="registration-form-label">
-                    Email<span className="registration-form-required">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="registration-form-input"
-                    required
-                  />
-                </div>
-                <div className="registration-form-group">
-                  <label className="registration-form-label">
-                    Teléfono<span className="registration-form-required">*</span>
-                  </label>
-                  <input
-                    type="tel"
-                    name="telefono"
-                    value={formData.telefono}
-                    onChange={handleInputChange}
-                    className="registration-form-input"
-                    required
-                  />
-                </div>
-                <div className="registration-form-group">
-                  <label className="registration-form-label">Dirección</label>
-                  <input
-                    type="text"
-                    name="direccion"
-                    value={formData.direccion}
-                    onChange={handleInputChange}
-                    className="registration-form-input"
-                  />
-                </div>
-                <div className="registration-form-group">
-                  <label className="registration-form-label">
-                    Programa Académico<span className="registration-form-required">*</span>
-                  </label>
-                  <select
-                    name="programa"
-                    value={formData.programa}
-                    onChange={handleInputChange}
-                    className="registration-form-select"
-                    required
-                  >
-                    <option value="">Seleccione un programa</option>
-                    <option value="Ingeniería de Sistemas">Ingeniería de Sistemas</option>
-                    <option value="Ingeniería Civil">Ingeniería Civil</option>
-                    <option value="Ingeniería Industrial">Ingeniería Industrial</option>
-                    <option value="Ingeniería Mecánica">Ingeniería Mecánica</option>
-                    <option value="Ingeniería Eléctrica">Ingeniería Eléctrica</option>
-                  </select>
-                </div>
-                <div className="registration-form-group">
-                  <label className="registration-form-label">
-                    Periodo de Ingreso<span className="registration-form-required">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="periodo"
-                    value={formData.periodo}
-                    onChange={handleInputChange}
-                    placeholder="Ej: 2025-1"
-                    className="registration-form-input"
-                    required
-                  />
-                </div>
-                <div className="registration-form-group">
-                  <label className="registration-form-label">
-                    Tipo de Estudiante<span className="registration-form-required">*</span>
-                  </label>
-                  <select
-                    name="tipoEstudiante"
-                    value={formData.tipoEstudiante}
-                    onChange={handleInputChange}
-                    className="registration-form-select"
-                    required
-                  >
-                    <option value="pregrado">Pregrado</option>
-                    <option value="posgrado">Posgrado</option>
-                    <option value="especializacion">Especialización</option>
-                    <option value="maestria">Maestría</option>
-                  </select>
-                </div>
-              </form>
-            </div>
-            <div className="registration-modal-footer">
-              <button
-                type="button"
-                className="registration-modal-button registration-button-cancel"
-                onClick={() => setShowModal(false)}
-              >
-                Cancelar
-              </button>
-              <button
-                type="submit"
-                className="registration-modal-button registration-button-save"
-                onClick={handleSubmit}
-              >
-                Registrar Estudiante
-              </button>
+              <UserRegistrationForm
+                onSubmit={handleSubmit}
+                onCancel={() => setShowModal(false)}
+                isLoading={isLoading}
+                error={error}
+              />
             </div>
           </div>
         </div>
