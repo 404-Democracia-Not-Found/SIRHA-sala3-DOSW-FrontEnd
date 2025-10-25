@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import RoleSelection from './components/RoleSelection/RoleSelection';
 import StudentLogin from './components/StudentLogin/StudentLogin';
 import AdminLogin from './components//AdminLogin/AdminLogin';
+import CoordinatorLogin from './components/CoordinatorLogin/CoordinatorLogin';
 import PasswordRecovery from './components/PasswordRecovery/PasswordRecovery';
 import StudentDashboard from './components//Student/StudentDashboard/StudentDashboard';
 import Messages from './components/Student/Messages/Messages';
@@ -31,6 +32,7 @@ const App = () => {
       {currentView === 'role-selection' && <RoleSelection setCurrentView={setCurrentView} />}
       {currentView === 'student-login' && <StudentLogin setCurrentView={setCurrentView} />}
       {currentView === 'admin-login' && <AdminLogin setCurrentView={setCurrentView} />}
+      {currentView === 'coordinator-login' && <CoordinatorLogin setCurrentView={setCurrentView} />}
       {currentView === 'password-recovery' && <PasswordRecovery setCurrentView={setCurrentView} />}
       {currentView === 'student-dashboard' && <StudentDashboard setCurrentView={setCurrentView} />}
       {currentView === 'messages' && <Messages setCurrentView={setCurrentView} />}
