@@ -44,6 +44,14 @@ const RoleSelection = ({ setCurrentView }) => {
             <User size={20} />
             Ingresar como Profesor
           </button>
+
+          <button
+            onClick={() => setCurrentView('coordinator-login')}
+            className="role-selection-button-admin"
+          >
+            <User size={20} />
+            Ingresar como Coordinador
+          </button>
         </div>
 
         {/* Link de soporte */}

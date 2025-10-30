@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Mail, Lock, AlertCircle } from 'lucide-react';
+import { Mail, Lock, Shield, AlertCircle } from 'lucide-react';
 import { authService } from '../../services';
-import './AdminLogin.css';
+import './CoordinatorLogin.css';
 
-const AdminLogin = ({ setCurrentView }) => {
+const CoordinatorLogin = ({ setCurrentView }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showError, setShowError] = useState(false);
@@ -33,17 +33,16 @@ const AdminLogin = ({ setCurrentView }) => {
 
       console.log('✅ Login exitoso:', response);
 
-      // Redirigir según el rol del usuario
-      if (response.user.rol === 'DOCENTE') {
-        setCurrentView('professor-dashboard');
-      } else if (response.user.rol === 'COORDINADOR') {
-        setCurrentView('administrative-dashboard');
-      } else {
-        // Si es estudiante, mostrar error
+      // Verificar que el usuario sea coordinador
+      if (response.user.rol !== 'COORDINADOR') {
         setShowError(true);
-        setErrorMessage('Este acceso es solo para docentes y coordinadores. Por favor, usa el acceso de estudiantes.');
+        setErrorMessage('Este acceso es solo para coordinadores. Por favor, usa el acceso correspondiente a tu rol.');
         authService.logout();
+        return;
       }
+
+      // Redirigir al dashboard administrativo
+      setCurrentView('administrative-dashboard');
 
     } catch (error) {
       console.error('❌ Error en login:', error);
@@ -56,7 +55,7 @@ const AdminLogin = ({ setCurrentView }) => {
       } else if (error.status === 404) {
         setErrorMessage('Usuario no encontrado. Verifica tus credenciales.');
       } else if (error.status === 422) {
-        setErrorMessage('Dominio de correo no válido. Los docentes deben usar @escuelaing.edu.co');
+        setErrorMessage('Dominio de correo no válido. Los coordinadores deben usar @escuelaing.edu.co');
       } else {
         setErrorMessage(
           error.message || 'Error al iniciar sesión. Verifica tu conexión e intenta nuevamente.'
@@ -68,60 +67,60 @@ const AdminLogin = ({ setCurrentView }) => {
   };
 
   return (
-    <div className="admin-login-wrapper">
+    <div className="coordinator-login-wrapper">
       {/* Panel izquierdo */}
-      <div className="admin-login-left-panel">
-        <div className="admin-login-left-content">
-          <div className="admin-login-logo-section">
-            <div className="admin-login-logo-box"></div>
-            <span className="admin-login-logo-text">School Manager</span>
+      <div className="coordinator-login-left-panel">
+        <div className="coordinator-login-left-content">
+          <div className="coordinator-login-logo-section">
+            <Shield className="coordinator-login-shield-icon" size={48} />
+            <span className="coordinator-login-logo-text">SIRHA Admin</span>
           </div>
           
-          <h1 className="admin-login-welcome-title">
-            Bienvenido de nuevo, Profesor.
+          <h1 className="coordinator-login-welcome-title">
+            Panel de Coordinación
           </h1>
-          <p className="admin-login-welcome-text">
-            Inicie sesión para acceder a su panel de control y gestionar las operaciones 
-            escolares sin problemas.
+          <p className="coordinator-login-welcome-text">
+            Accede al sistema de gestión administrativa para supervisar y coordinar 
+            todas las operaciones académicas.
           </p>
         </div>
       </div>
 
       {/* Panel derecho */}
-      <div className="admin-login-right-panel">
-        <div className="admin-login-form-container">
-          <div className="admin-login-header">
-            <h2 className="admin-login-title">
-              Inicio de Sesión de Profesor
+      <div className="coordinator-login-right-panel">
+        <div className="coordinator-login-form-container">
+          <div className="coordinator-login-header">
+            <h2 className="coordinator-login-title">
+              Acceso Administrativo
             </h2>
-            <p className="admin-login-subtitle">Por favor, ingrese sus credenciales para continuar.</p>
+            <p className="coordinator-login-subtitle">Ingrese sus credenciales de coordinador</p>
           </div>
 
-          <div className="admin-login-form">
-            <div className="admin-login-form-group">
+          <div className="coordinator-login-form">
+            <div className="coordinator-login-form-group">
               <label>Correo Institucional</label>
-              <div className="admin-login-input-wrapper">
-                <Mail className="admin-login-icon" size={20} />
+              <div className="coordinator-login-input-wrapper">
+                <Mail className="coordinator-login-icon" size={20} />
                 <input
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="nombre@escuelaing.edu.co"
-                  className="admin-login-input"
+                  placeholder="coordinador@escuelaing.edu.co"
+                  className="coordinator-login-input"
                 />
               </div>
             </div>
 
-            <div className="admin-login-form-group">
+            <div className="coordinator-login-form-group">
               <label>Contraseña</label>
-              <div className="admin-login-input-wrapper">
-                <Lock className="admin-login-icon" size={20} />
+              <div className="coordinator-login-input-wrapper">
+                <Lock className="coordinator-login-icon" size={20} />
                 <input
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Contraseña"
-                  className="admin-login-input"
+                  placeholder="Contraseña de acceso"
+                  className="coordinator-login-input"
                 />
               </div>
             </div>
@@ -147,33 +146,32 @@ const AdminLogin = ({ setCurrentView }) => {
 
             <button
               onClick={handleLogin}
-              className="admin-login-button"
+              className="coordinator-login-button"
               disabled={isLoading}
               style={{
                 opacity: isLoading ? 0.7 : 1,
                 cursor: isLoading ? 'not-allowed' : 'pointer'
               }}
             >
-              {isLoading ? 'Iniciando Sesión...' : 'Iniciar Sesión'}
+              {isLoading ? 'Ingresando...' : 'Ingresar al Panel'}
             </button>
 
-            <div className="admin-login-recovery-section">
+            <div className="coordinator-login-recovery-section">
               <button
                 onClick={() => setCurrentView('password-recovery')}
-                className="admin-login-recovery-button"
+                className="coordinator-login-recovery-button"
               >
                 ¿Olvidaste tu contraseña?
               </button>
             </div>
           </div>
 
-          <div className="admin-login-switch-section">
-            <span className="admin-login-switch-text">¿No es un profesor? </span>
+          <div className="coordinator-login-switch-section">
             <button
-              onClick={() => setCurrentView('student-login')}
-              className="admin-login-switch-button"
+              onClick={() => setCurrentView('role-selection')}
+              className="coordinator-login-back-button"
             >
-              Iniciar sesión como estudiante
+              ← Volver a selección de rol
             </button>
           </div>
         </div>
@@ -182,4 +180,4 @@ const AdminLogin = ({ setCurrentView }) => {
   );
 };
 
-export default AdminLogin;
+export default CoordinatorLogin;
