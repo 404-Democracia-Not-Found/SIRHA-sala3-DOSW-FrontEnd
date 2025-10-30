@@ -25,6 +25,12 @@ const API_CONFIG = {
     LOGIN: '/Autenticación/login',
     REFRESH: '/Autenticación/refresh',
   },
+  // Alternativa sin acentos: algunos despliegues/proxies pueden no manejar bien rutas con caracteres no-ASCII
+  AUTH_ALIASES: {
+    REGISTER: '/Autenticacion/register',
+    LOGIN: '/Autenticacion/login',
+    REFRESH: '/Autenticacion/refresh',
+  },
   
   // Endpoints de facultades
   FACULTADES: {

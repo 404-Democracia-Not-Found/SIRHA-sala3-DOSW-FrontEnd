@@ -96,7 +96,26 @@ const authService = {
 
       console.log('🔐 Iniciando sesión para:', credentials.email);
 
-      const response = await httpClient.post(API_CONFIG.ENDPOINTS.AUTH.LOGIN, payload);
+      // Intentar endpoint principal primero (con acento). Si falla por CORS/403/404, intentar alias sin acento.
+      let response;
+      try {
+        response = await httpClient.post(API_CONFIG.ENDPOINTS.AUTH.LOGIN, payload);
+      } catch (err) {
+        // Si el error es por CORS/Forbidden o Not Found, intentar la ruta alternativa sin acento
+        const status = err.response?.status;
+        const isCorsOrNotFound = status === 403 || status === 404 || !err.response;
+        if (isCorsOrNotFound) {
+          console.warn('Primary auth endpoint failed, trying alternate path without accent...', err.response?.status);
+          try {
+            response = await httpClient.post(API_CONFIG.AUTH_ALIASES.LOGIN, payload);
+          } catch (err2) {
+            // rethrow the original error if second attempt also fails
+            throw err2 || err;
+          }
+        } else {
+          throw err;
+        }
+      }
 
       // Guardar token y datos del usuario
       if (response.data && response.data.token) {
@@ -129,7 +148,20 @@ const authService = {
    */
   async refreshToken() {
     try {
-      const response = await httpClient.post(API_CONFIG.ENDPOINTS.AUTH.REFRESH);
+      // Refresh token: intentar alias si el primero falla
+      let response;
+      try {
+        response = await httpClient.post(API_CONFIG.ENDPOINTS.AUTH.REFRESH);
+      } catch (err) {
+        const status = err.response?.status;
+        const isCorsOrNotFound = status === 403 || status === 404 || !err.response;
+        if (isCorsOrNotFound) {
+          console.warn('Primary refresh endpoint failed, trying alternate path without accent...', err.response?.status);
+          response = await httpClient.post(API_CONFIG.AUTH_ALIASES.REFRESH);
+        } else {
+          throw err;
+        }
+      }
 
       // Actualizar token en localStorage
       if (response.data && response.data.token) {
