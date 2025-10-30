@@ -1,8 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import './Notification.css';
 
-const Notification = ({
+/**
+ * Componente de notificaciones tipo toast
+ * Se muestra temporalmente y desaparece automáticamente
+ */
+const Notification = ({ 
   type = 'info',
   message,
   duration = 5000,
@@ -13,6 +17,7 @@ const Notification = ({
   const [isLeaving, setIsLeaving] = useState(false);
 
   useEffect(() => {
+    // Auto-cerrar después de la duración especificada
     if (duration > 0) {
       const timer = setTimeout(() => {
         handleClose();
@@ -24,13 +29,17 @@ const Notification = ({
 
   const handleClose = () => {
     setIsLeaving(true);
-
+    
+    // Esperar a que termine la animación antes de ocultar
     setTimeout(() => {
       setIsVisible(false);
-      if (onClose) onClose();
+      if (onClose) {
+        onClose();
+      }
     }, 300);
   };
 
+  // Iconos según el tipo de notificación
   const getIcon = () => {
     switch(type) {
       case 'success':
@@ -39,6 +48,7 @@ const Notification = ({
         return '✕';
       case 'warning':
         return '⚠';
+      case 'info':
       default:
         return 'ℹ';
     }
@@ -47,7 +57,7 @@ const Notification = ({
   if (!isVisible) return null;
 
   return (
-    <div
+    <div 
       className={`notification notification-${type} ${isLeaving ? 'notification-leaving' : ''}`}
       role="alert"
     >
@@ -55,12 +65,12 @@ const Notification = ({
         <span className="notification-icon" aria-hidden="true">
           {getIcon()}
         </span>
-
+        
         <span className="notification-message">{message}</span>
       </div>
 
       {showCloseButton && (
-        <button
+        <button 
           className="notification-close-btn"
           onClick={handleClose}
           aria-label="Cerrar notificación"

@@ -2,10 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './LoadingSpinner.css';
 
+// Spinner de carga reutilizable - se puede usar en cualquier parte de la app
 const LoadingSpinner = ({ message, size = 'medium', fullScreen = false }) => {
-
-  const containerClass = fullScreen
-    ? 'loading-spinner-fullscreen'
+  
+  // Si es fullScreen, centramos en toda la pantalla
+  const containerClass = fullScreen 
+    ? 'loading-spinner-fullscreen' 
     : 'loading-spinner-container';
 
   return (
@@ -13,7 +15,7 @@ const LoadingSpinner = ({ message, size = 'medium', fullScreen = false }) => {
       <div className={`loading-spinner loading-spinner-${size}`}>
         <div className="spinner-circle"></div>
       </div>
-
+      
       {message && (
         <p className="loading-spinner-message">{message}</p>
       )}
