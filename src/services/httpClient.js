@@ -30,6 +30,18 @@ httpClient.interceptors.request.use(
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
+    // Asegurar que la parte de la URL esté correctamente codificada (p. ej. rutas con acentos)
+    // Esto evita problemas con proxies o servidores que no acepten rutas con caracteres no-ASCII.
+    if (config.url) {
+      // Si el URL ya es absoluto no tocar el host, sólo codificar el path/query
+      try {
+        // encodeURI preserva los caracteres válidos en URLs y codifica acentos
+        config.url = encodeURI(config.url);
+      } catch (e) {
+        // En caso de problema, dejamos la URL original y registramos el error en consola
+        console.warn('Could not encode request URL, using original:', config.url, e);
+      }
+    }
     
     // Log en desarrollo
     if (process.env.NODE_ENV === 'development') {
