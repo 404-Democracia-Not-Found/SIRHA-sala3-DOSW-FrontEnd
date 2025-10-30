@@ -111,30 +111,6 @@
   background-color: #f9fafb;
 }
 
-.role-selection-button-admin {
-  width: 100%;
-  padding: 1rem;
-  background-color: #7f1d1d;
-  color: white;
-  border-radius: 0.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  transition: all 0.3s;
-  box-shadow: 0 2px 4px rgba(127, 29, 29, 0.2);
-}
-
-.role-selection-button-admin:hover {
-  background-color: #991b1b;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(127, 29, 29, 0.3);
-}
-
 .role-selection-support-link {
   text-align: center;
   margin-top: 1.5rem;
